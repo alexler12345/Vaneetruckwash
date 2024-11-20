@@ -4,8 +4,8 @@ export default function Home() {
   return (
     <>
 
-    <div className="text-center bg-gradient-to-r from-blue-600 to-blue-500">
-      <h1 className="text-5xl" href="#">Vanee Truck Wash</h1>
+    <div className="text-center">
+      <h1 className="text-5xl bg-gradient-to-r from-blue-600 to-blue-400 text-transparent inline-block bg-clip-text" href="#">Vanee Truck Wash</h1>
       <h1 className="text-2xl">"Where Big Rigs Shine and Trailers Sparkle"</h1>
     </div>
     

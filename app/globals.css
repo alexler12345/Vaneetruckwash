@@ -1,7 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -17,84 +16,465 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+ 
 }
 
-@Layer base {
- @font-face {
-    font-family: 'poppinsbold';
-    src: url(/fonts/poppins-bold-webfont.eot);
-    src: url(/fonts/poppins-bold-webfont.eot?#iefix) format('embedded-opentype'),
-         url(/fonts/poppins-bold-webfont.woff2) format('woff2'),
-         url(/fonts/poppins-bold-webfont.woff) format('woff'),
-         url(/fonts/poppins-bold-webfont.ttf) format('truetype'),
-         url(/fonts/poppins-bold-webfont.svg#poppinsbold) format('svg');
-    font-weight: normal;
-    font-style: normal;
+* {
+  -webkit-tap-highlight-color: transparent;
+}
 
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  color: #333;
+  background-color: #f9f9f9;
+}
+
+.pclooksMain {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two equal columns */
+  gap: 20px;
+}
+
+h1 {
+  font-size: 36px;
+}
+
+p {
+  font-size: 18px;
+}
+
+/* Custom focus style */
+
+.contactinfo-a:focus,
+.title-a:focus{
+  outline: none;
+  box-shadow: 0px 0px 10px rgb(0, 123, 255);
+  /* Custom focus shadow */
+}
+
+/* Basic button style */
+
+.contactinfo-a
+{
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  color: #fff;
+  transition: all 0.3s ease;
+  /* Smooth transition */
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+  /* Adding shadow */
+}
+
+/* Hover effect */
+
+.contactinfo-a:hover,
+.title-a:hover {
+  box-shadow: 0px 3px 7px rgba(0, 0, 0, 0.15);
+  /* Reduced shadow on hover */
+  transform: translateY(-2px);
+  /* Slight movement upwards */
+}
+
+/* Click effect */
+
+.contactinfo-a:active,
+.title-a:active {
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  /* Less shadow when clicked */
+  transform: translateY(2px);
+  /* Move the button down slightly */
 }
 
 
 
 
-@font-face {
-    font-family: 'poppinslight';
-    src: url(/fonts/poppins-light-webfont.eot);
-    src: url(/fonts/poppins-light-webfont.eot?#iefix) format('embedded-opentype'),
-         url(/fonts/poppins-light-webfont.woff2) format('woff2'),
-         url(/fonts/poppins-light-webfont.woff) format('woff'),
-         url(/fonts/poppins-light-webfont.ttf) format('truetype'),
-         url(/fonts/poppins-light-webfont.svg#poppinslight) format('svg');
-    font-weight: normal;
-    font-style: normal;
 
+.title {
+  display: flex;
+
+  width: 100%;
+
+  flex-direction: column;
+  align-items: center;
+  padding-top: 16px;
+  padding-bottom: 50px;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.title-a{
+  color: #4e66f8;
+  padding-bottom: 10px;
+  font-weight: 600;
+    border-radius: 5px;
+    padding-left: 5px;
+    cursor: pointer;
+}
+
+.title-b {
+  font-size: 16px;
+  /* Slightly larger for more visibility */
+  color: #555;
+  font-style: italic;
+  color: #4e66f8;
+}
+
+a:link {
+  text-decoration: none !important;
+}
+
+.contactinfo {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+
+  border-radius: 5px;
+  max-width: 400px;
+
+  align-items: flex-start;
+
+  transition: all 0.3s ease-in-out;
+}
+
+.contactinfo-a {
+  text-decoration: none;
+  color: #4e66f8;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.contactinfo-a i {
+  margin-right: 10px;
+}
+
+.contactinfo-a:first-child::before {
+  content: "\f095";
+  font-family: "FontAwesome";
+  margin-right: 10px;
+}
+
+.contactinfo-a:nth-child(2)::before {
+  content: "\f0e0";
+  font-family: "FontAwesome";
+  margin-right: 10px;
+}
+
+.contactinfo-a:nth-child(3)::before {
+  content: "\f3c5";
+  font-family: "FontAwesome";
+  margin-right: 10px;
+}
+
+.pclooks{
+  display: flex;
+  flex-direction: column;
+}
+
+/*pc*/
+@media screen and (min-width: 900px) {
+   .pclooksMain {
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 1px solid #e9ecef;
+  }
+
+  .pclooks2 {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .pclooks {
+    width: 41%;
+  }
+
+  .timeMain {
+    padding-top: 23px;
+  }
+
+  .times {
+    max-width: 1000px; /* Expand container */
+    padding: 40px; /* Increase padding */
+    border-radius: 10px; /* Larger border radius */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Slightly stronger shadow */
+  }
+
+  .title-a {
+    font-size: 5vw;
+  }
+
+
+
+  .contactinfoMain {
+    margin-bottom: 120px;
+  }
+
+  .contactinfo {
+    padding: 30px;
+    /* Increased padding */
+    border-radius: 10px;
+    /* Larger border radius */
+    max-width: 600px;
+    /* Increase the max width */
+    background-color: #f9f9f9;
+  }
+
+  .contactinfo-a {
+    font-size: 20px;
+    /* Larger font size */
+  }
+
+  .contactinfo-a,
+  .contactinfo-a i,
+  .contactinfo-a:first-child::before,
+  .contactinfo-a:nth-child(2)::before,
+  .contactinfo-a:nth-child(3)::before {
+    margin-right: 15px;
+    /* More space between icon and text */
+  }
+
+  .card-header {
+    padding-bottom: 15px; /* More padding */
+    margin-bottom: 15px; /* Increased margin */
+  }
+
+  .OpeningT {
+    font-size: 28px; /* Increase title font size */
+  }
+
+  i.far {
+    font-size: 50px; /* Larger icon */
+  }
+
+  /* Table Styles */
+  table.openinghours {
+    border-spacing: 0 10px; /* Increased spacing between rows */
+  }
+
+  table.openinghours th:not(.current-day-day, .open-now),
+  table.openinghours td:not(.current-day-day, .open-now) {
+    padding: 15px 20px; /* Larger padding */
+    border-radius: 8px; /* Larger radius for table cells */
+  }
+
+  table.openinghours th,
+  table.openinghours td {
+    padding: 18px 25px; /* Larger table cell padding */
+    font-size: 20px; /* Increase table font size */
+  }
+}
+
+/*tablet*/
+@media screen and (min-width: 601px) and (max-width: 899px) {
+  .pclooks {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 10px;
+  }
+
+  
+
+  .maps{
+    margin-top: 50px;
+  }
+
+  .contactinfo {
+    background-color: #f9f9f9;
+  }
+
+  .title-a {
+    font-size: 5vw;
+  }
+}
+
+
+/*phone*/
+@media screen and (max-width: 600px) {
+  .times {
+    max-width: 83%;
+    margin: 20px auto;
+  }
+ .timeMain {
+    padding-bottom: 5px;
+    border-bottom: 1px solid #e9ecef;
+    order: 2;
+  }
+  .title-a {
+    font-size: 11vw;
+  }
+
+  .contactinfo {
+    border-bottom: 1px solid #e9ecef;
+    background-color: #f9f9f9;
+  }
+
+  .maps {
+    border-bottom: 1px solid #e9ecef;
+    order: 1;
+  }
+
+  .pclooksMain{
+    grid-template-columns: 1fr; /* One column layout */
+  }
 }
 
 
 
 
-@font-face {
-    font-family: 'poppinsmedium';
-    src: url(/fonts/poppins-medium-webfont.eot);
-    src: url(/fonts/poppins-medium-webfont.eot?#iefix) format('embedded-opentype'),
-         url(/fonts/poppins-medium-webfont.woff2) format('woff2'),
-         url(/fonts/poppins-medium-webfont.woff) format('woff'),
-         url(/fonts/poppins-medium-webfont.ttf) format('truetype'),
-         url(/fonts/poppins-medium-webfont.svg#poppinsmedium) format('svg');
-    font-weight: normal;
-    font-style: normal;
 
+
+.maps {
+  padding-top: 27px;
+  border: 10px;
+
+  display: flex;
+  justify-content: center;
+  padding-bottom: 27px;
+
+  height: 700px;
+}
+
+.maps-i {
+  border: 0;
+  border-radius: 5px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* General Styles */
+.times {
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #f9f9f9;
+  transition: all 0.3s ease-in-out;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 10px;
+}
+
+.OpeningT {
+  font-family: "Arial", sans-serif;
+  color: #333;
+  font-weight: bold;
+  margin: 0;
+}
+
+i.far {
+  color: #333;
+}
+
+/* Table Styles */
+table.openinghours {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 5px;
+}
+
+table.openinghours th:not(.current-day-day, .open-now),
+table.openinghours td:not(.current-day-day, .open-now) {
+  padding: 12px 15px;
+  text-align: left;
+  border-radius: 5px;
+  /* Add a radius to all table cells */
+}
+
+table.openinghours th {
+  background-color: #007bff;
+  color: #fff;
+}
+
+table.openinghours td {
+  background-color: #e9ecef;
+}
+
+/* Current Day Highlight */
+.current-day th,
+.current-day td {
+  background-color: #28a745 !important;
+  /* Green for the current day */
+  color: white !important;
+}
+
+.current-day-day {
+  padding: 12px 15px;
+  text-align: left;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.open-now {
+  padding: 12px 15px;
+  text-align: left;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+/* Open Now and Closed Now Labels */
+.open-now::after {
+  content: " (Open Now)";
+  color: green;
+  font-weight: bold;
+}
+
+.closed-now::after {
+  content: " (Closed Now)";
+  color: red;
+  font-weight: bold;
+}
+
+/* Highlighted Row */
+table.openinghours tr.table-success th,
+table.openinghours tr.table-success td {
+  background-color: #28a745;
+  color: white;
+}
+
+/* Hover Effect */
+table.openinghours tr:hover th,
+table.openinghours tr:hover td {
+  background-color: #d1ecf1;
+  color: #333;
+}
+
+/* Closed Days Styling */
+table.openinghours tr#Saturday td,
+table.openinghours tr#Sunday td {
+  background-color: #f8d7da;
+  color: #721c24;
+  font-weight: bold;
 }
 
 
+.footer {
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
 
+.social-icons {
+  margin-bottom: 10px;
+}
 
-@font-face {
-    font-family: 'poppinsregular';
-    src: url(/fonts/poppins-regular-webfont.eot);
-    src: url(/fonts/poppins-regular-webfont.eot?#iefix) format('embedded-opentype'),
-         url(/fonts/poppins-regular-webfont.woff2) format('woff2'),
-         url(/fonts/poppins-regular-webfont.woff) format('woff'),
-         url(/fonts/poppins-regular-webfont.ttf) format('truetype'),
-         url(/fonts/poppins-regular-webfont.svg#poppinsregular) format('svg');
-    font-weight: normal;
-    font-style: normal;
+.social-icons a {
+  color: white;
+  margin: 0 10px;
+  font-size: 24px;
+  transition: color 0.3s;
+}
 
+.social-icons a:hover {
+  color: #04aa6d;
 }
 
 
-
-
-@font-face {
-    font-family: 'poppinssemibold';
-    src: url(/fonts/poppins-semibold-webfont.eot);
-    src: url(/fonts/poppins-semibold-webfont.eot?#iefix) format('embedded-opentype'),
-         url(/fonts/poppins-semibold-webfont.woff2) format('woff2'),
-         url(/fonts/poppins-semibold-webfont.woff) format('woff'),
-         url(/fonts/poppins-semibold-webfont.ttf) format('truetype'),
-         url(/fonts/poppins-semibold-webfont.svg#poppinssemibold) format('svg');
-    font-weight: normal;
-    font-style: normal;
-
-}
-}
