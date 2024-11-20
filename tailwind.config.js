@@ -7,6 +7,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily:{
+        custom: ['poppinsbold', 'poppinslight', 'poppinsmedium', 'poppinsregular', 'poppinssemibold']
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",

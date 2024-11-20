@@ -1,101 +1,88 @@
-import Image from "next/image";
+
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.js
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+    <div className="text-center bg-gradient-to-r from-blue-600 to-blue-500">
+      <h1 className="text-5xl" href="#">Vanee Truck Wash</h1>
+      <h1 className="text-2xl">"Where Big Rigs Shine and Trailers Sparkle"</h1>
     </div>
+    
+    <div className="pclooksMain">
+    <div className="pclooks">
+    <div className="contactinfoMain">
+      <div className="contactinfo">
+        <a className="contactinfo-a" href="tel: +1 403-320-6060"> +1 403-320-6060</a>
+        <a className="contactinfo-a" href="mailto: truckwash@vaneelive.com"> truckwash@vaneelive.com</a>
+        <a className="contactinfo-a" href="https://www.google.com/maps?cid=10197179475260377286"> 3716 9 Ave N, Lethbridge,
+          AB</a>
+      </div>
+    </div>
+    <div className="maps">
+      <iframe className="maps-i"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14595.262829162146!2d-112.78889920314327!3d49.70887519830226!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x536e8710830c5649%3A0x8d83a8b4adcc88c6!2sVanee%20Truck%20Wash!5e0!3m2!1sen!2sca!4v1726847676663!5m2!1sen!2sca"
+        height="100%" width="95%" referrerPolicy="no-referrer-when-downgrade" loading="lazy"></iframe>
+    </div>
+    </div>
+    <div className="pclooks2">
+    <div className="timeMain">
+      <div className="times">
+        <div className="card-header">
+          <div className="media-body">
+            <h4 className="OpeningT">Opening Hours</h4>
+          </div>
+          <i className="far fa-clock fa-3x" style={{opacity: 0.2}}></i>
+        </div>
+        <table className="openinghours">
+          <tbody>
+            <tr id="Monday">
+              <th>Monday</th>
+              <td className="text-right">8 AM–5 PM</td>
+            </tr>
+            <tr id="Tuesday">
+              <th>Tuesday</th>
+              <td className="text-right">8 AM–5 PM</td>
+            </tr>
+            <tr id="Wednesday">
+              <th>Wednesday</th>
+              <td className="text-right">8 AM–5 PM</td>
+            </tr>
+            <tr id="Thursday">
+              <th>Thursday</th>
+              <td className="text-right">8 AM–5 PM</td>
+            </tr>
+            <tr id="Friday">
+              <th>Friday</th>
+              <td className="text-right">8 AM–5 PM</td>
+            </tr>
+            <tr id="Saturday">
+              <th>Saturday</th>
+              <td className="text-right">Closed</td>
+            </tr>
+            <tr id="Sunday">
+              <th>Sunday</th>
+              <td className="text-right">Closed</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    
+    
+    </div>
+    </div>
+    
+    
+    <footer className="footer">
+    <div className="social-icons">
+      <a href="https://www.facebook.com/profile.php?id=61558004790927" target="_blank"><i
+          className="fab fa-facebook-f"></i></a>
+      <a href="#" target="_blank"><i className="fa-brands fa-tiktok"></i></a>
+      <a href="#" target="_blank"><i className="fab fa-instagram"></i></a>
+    </div>
+    <p>&copy; 2024 Vanee Truck Wash. All Rights Reserved.</p>
+    </footer>
+        </>
   );
 }
