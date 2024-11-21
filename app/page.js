@@ -3,19 +3,29 @@
 export default function Home() {
   return (
     <>
+    <div className="text-center ">
+    <a href="/" className="inline-block">
+  <h1
+    className="text-5xl bg-gradient-to-r from-blue-600 to-blue-400 text-transparent 
+      bg-clip-text hover:scale-110 hover:duration-100 active:scale-95 
+      cursor-pointer transition-transform select-none
+      
+      ">
+    Vanee Truck Wash
+  </h1>
+</a>
 
-    <div className="text-center">
-      <h1 className="text-5xl bg-gradient-to-r from-blue-600 to-blue-400 text-transparent inline-block bg-clip-text" href="#">Vanee Truck Wash</h1>
-      <h1 className="text-2xl">&quot;Where Big Rigs Shine and Trailers Sparkle&qout;</h1>
+     <h1 className="text-2xl cursor-default select-none">&quot;Where Big Rigs Shine and Trailers Sparkle&quot;</h1>
+     <hr className="border mt-6 mb-3"></hr>
     </div>
     
     <div className="pclooksMain">
     <div className="pclooks">
     <div className="contactinfoMain">
-      <div className="contactinfo">
-        <a className="contactinfo-a" href="tel: +1 403-320-6060"> +1 403-320-6060</a>
-        <a className="contactinfo-a" href="mailto: truckwash@vaneelive.com"> truckwash@vaneelive.com</a>
-        <a className="contactinfo-a" href="https://www.google.com/maps?cid=10197179475260377286"> 3716 9 Ave N, Lethbridge,
+      <div className="contactinfo ">
+        <a className="contactinfo-a focus:shadow-boxFocus focus:outline-none py-2.5 px-5 rounded-md no-underline text-white transition-all duration-300 ease-in-out shadow-md hover:shadow-lg transform hover:-translate-y-0.5 active:shadow  active:translate-y-0.5" href="tel: +1 403-320-6060"> +1 403-320-6060</a>
+        <a className="contactinfo-a focus:shadow-boxFocus focus:outline-none py-2.5 px-5 rounded-md no-underline text-white transition-all duration-300 ease-in-out shadow-md hover:shadow-lg transform hover:-translate-y-0.5 active:shadow  active:translate-y-0.5" href="mailto: truckwash@vaneelive.com"> truckwash@vaneelive.com</a>
+        <a className="contactinfo-a focus:shadow-boxFocus focus:outline-none py-2.5 px-5 rounded-md no-underline text-white transition-all duration-300 ease-in-out shadow-md hover:shadow-lg transform hover:-translate-y-0.5 active:shadow  active:translate-y-0.5" href="https://www.google.com/maps?cid=10197179475260377286"> 3716 9 Ave N, Lethbridge,
           AB</a>
       </div>
     </div>

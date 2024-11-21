@@ -7,7 +7,9 @@ module.exports = {
   ],
   theme: {
     extend: {
-     
+      boxShadow: {
+        'boxFocus': '0px 0px 10px rgb(0, 123, 255)',
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",

@@ -15,7 +15,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={poppins.className}>
-      <body>
+      <body className='m-0 bg-[#f9f9f9]'>
         {children}
       </body>
     </html>
