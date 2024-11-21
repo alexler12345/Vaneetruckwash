@@ -22,10 +22,10 @@ export default function Home() {
     <div className="pclooksMain">
     <div className="pclooks">
     <div className="contactinfoMain">
-      <div className="contactinfo ">
-        <a className="contactinfo-a focus:shadow-boxFocus focus:outline-none py-2.5 px-5 rounded-md no-underline text-white transition-all duration-300 ease-in-out shadow-md hover:shadow-lg transform hover:-translate-y-0.5 active:shadow  active:translate-y-0.5" href="tel: +1 403-320-6060"> +1 403-320-6060</a>
-        <a className="contactinfo-a focus:shadow-boxFocus focus:outline-none py-2.5 px-5 rounded-md no-underline text-white transition-all duration-300 ease-in-out shadow-md hover:shadow-lg transform hover:-translate-y-0.5 active:shadow  active:translate-y-0.5" href="mailto: truckwash@vaneelive.com"> truckwash@vaneelive.com</a>
-        <a className="contactinfo-a focus:shadow-boxFocus focus:outline-none py-2.5 px-5 rounded-md no-underline text-white transition-all duration-300 ease-in-out shadow-md hover:shadow-lg transform hover:-translate-y-0.5 active:shadow  active:translate-y-0.5" href="https://www.google.com/maps?cid=10197179475260377286"> 3716 9 Ave N, Lethbridge,
+      <div className="contactinfo flex flex-col p-5 rounded-md max-w-md items-start transition-all duration-300 ease-in-out">
+        <a className="contactinfo-a focus:shadow-boxFocus focus:outline-none py-2.5 px-5 rounded-md no-underline bg-white transition-all duration-300 ease-in-out shadow-md hover:shadow-lg transform hover:-translate-y-0.5 active:shadow  active:translate-y-0.5 text-[#4e66f8] text-base flex items-center mb-2.5" href="tel: +1 403-320-6060"><img src="phone.svg" alt="" width="22" height="22"></img> +1 403-320-6060</a>
+        <a className="contactinfo-a focus:shadow-boxFocus focus:outline-none py-2.5 px-5 rounded-md no-underline bg-white transition-all duration-300 ease-in-out shadow-md hover:shadow-lg transform hover:-translate-y-0.5 active:shadow  active:translate-y-0.5 text-[#4e66f8] text-base flex items-center mb-2.5" href="mailto: truckwash@vaneelive.com"> truckwash@vaneelive.com</a>
+        <a className="contactinfo-a focus:shadow-boxFocus focus:outline-none py-2.5 px-5 rounded-md no-underline bg-white transition-all duration-300 ease-in-out shadow-md hover:shadow-lg transform hover:-translate-y-0.5 active:shadow  active:translate-y-0.5 text-[#4e66f8] text-base flex items-center mb-2.5" href="https://www.google.com/maps?cid=10197179475260377286"> 3716 9 Ave N, Lethbridge,
           AB</a>
       </div>
     </div>
