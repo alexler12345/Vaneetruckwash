@@ -6,7 +6,7 @@ export default function Home() {
 
     <div className="text-center">
       <h1 className="text-5xl bg-gradient-to-r from-blue-600 to-blue-400 text-transparent inline-block bg-clip-text" href="#">Vanee Truck Wash</h1>
-      <h1 className="text-2xl">"Where Big Rigs Shine and Trailers Sparkle"</h1>
+      <h1 className="text-2xl">&quot;Where Big Rigs Shine and Trailers Sparkle&qout;</h1>
     </div>
     
     <div className="pclooksMain">
