@@ -58,17 +58,7 @@ a:link {
 
 
 
-.contactinfo-a:nth-child(2)::before {
-  content: "\f0e0";
-  font-family: "FontAwesome";
-  margin-right: 10px;
-}
 
-.contactinfo-a:nth-child(3)::before {
-  content: "\f3c5";
-  font-family: "FontAwesome";
-  margin-right: 10px;
-}
 
 .pclooks{
   display: flex;
@@ -227,38 +217,14 @@ a:link {
 
 
 
-.maps {
-  padding-top: 27px;
-  border: 10px;
 
-  display: flex;
-  justify-content: center;
-  padding-bottom: 27px;
 
-  height: 700px;
-}
-
-.maps-i {
-  border: 0;
-  border-radius: 5px;
-  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
-}
 
 /* General Styles */
-.times {
-  padding: 20px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  background-color: #f9f9f9;
-  transition: all 0.3s ease-in-out;
-}
+
 
 .card-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-bottom: 10px;
+  
   border-bottom: 1px solid #ddd;
   margin-bottom: 10px;
 }
