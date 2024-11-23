@@ -4,6 +4,8 @@ export default function Home() {
   const contactIconSize = 20;
   const contactIconCSS = "mr-2 fill-blueCustom";
   const transTemp = "transition-all duration-300 ease-in-out";
+  const clockIconSize = 45;
+  const footerIcon = 22;
   return (
     <>
     <div className="text-center ">
@@ -41,11 +43,11 @@ export default function Home() {
     <div className="pclooks2">
     <div className="timeMain">
       <div className="times p-5 border border-solid border-[#ddd] rounded-lg shadow-lg bg-[#f9f9f9] transition-all duration-300 ease-in-out">
-        <div className="card-header flex justify-between items-center pb-2.5 ">
+        <div className="card-header flex justify-between items-center pb-2.5 border-b border-solid border-[#ddd] m-2.5">
           <div className="media-body">
-            <h4 className="OpeningT">Opening Hours</h4>
+            <h4 className="OpeningT font-sans text-[#333] text-bold m-0">Opening Hours</h4>
           </div>
-          <i className="far fa-clock fa-3x" style={{opacity: 0.2}}></i>
+          <img className="" src="images/clock.svg" alt="" width={clockIconSize} height={clockIconSize} ></img>
         </div>
         <table className="openinghours">
           <tbody>
@@ -87,12 +89,12 @@ export default function Home() {
     </div>
     
     
-    <footer className="footer">
-    <div className="social-icons">
-      <a href="https://www.facebook.com/profile.php?id=61558004790927" target="_blank"><i
-          className="fab fa-facebook-f"></i></a>
-      <a href="#" target="_blank"><i className="fa-brands fa-tiktok"></i></a>
-      <a href="#" target="_blank"><i className="fab fa-instagram"></i></a>
+    <footer className="bg-[#333] text-white p-5 text-center">
+    <div className="mb-2.5 flex flex-row justify-center">
+      <a className="text-white my-0 mx-2.5 text-2xl" href="https://www.facebook.com/profile.php?id=61558004790927" target="_blank">
+         <img src="images/facebook.svg" alt="" width={footerIcon-6} height={footerIcon-6}></img></a>
+      <a className="text-white my-0 mx-2.5 text-2xl" href="#" target="_blank"><img src="images/tiktok.svg" alt="" width={footerIcon} height={footerIcon}></img></a>
+      <a className="text-white my-0 mx-2.5 text-2xl" href="#" target="_blank"><img src="images/instagram.svg" alt="" width={footerIcon} height={footerIcon}></img></a>
     </div>
     <p>&copy; 2024 Vanee Truck Wash. All Rights Reserved.</p>
     </footer>
