@@ -45,7 +45,7 @@ export default function Home() {
       <div className="times p-5 border border-solid border-[#ddd] rounded-lg shadow-lg bg-[#f9f9f9] transition-all duration-300 ease-in-out">
         <div className="card-header flex justify-between items-center pb-2.5 border-b border-solid border-[#ddd] m-2.5">
           <div className="media-body">
-            <h4 className="OpeningT font-sans text-[#333] text-bold m-0">Opening Hours</h4>
+            <h4 className="OpeningT font-sans text-[#333] text-bold m-0">Office Hours</h4>
           </div>
           <img className="" src="images/clock.svg" alt="" width={clockIconSize} height={clockIconSize} ></img>
         </div>
