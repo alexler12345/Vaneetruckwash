@@ -1,11 +1,12 @@
 import Link from "next/link";
-
+import Image from "next/image";
+import Footer from "@/components/footer";
 export default function Home() {
   const contactIconSize = 20;
   const contactIconCSS = "mr-2 fill-blueCustom";
   const transTemp = "transition-all duration-300 ease-in-out";
   const clockIconSize = 45;
-  const footerIcon = 22;
+  
   return (
     <>
     <div className="text-center ">
@@ -20,7 +21,7 @@ export default function Home() {
   </h1>
 </a>
 
-     <h1 className="text-2xl cursor-default select-none">&quot;Where Big Rigs Shine and Trailers Sparkle&quot;</h1>
+     <h1 className="text-lg lg:text-2xl cursor-default select-none">&quot;Where Big Rigs Shine and<br /> Trailers Sparkle&quot;</h1>
      <hr className="border mt-6 mb-3"></hr>
     </div>
     
@@ -28,9 +29,9 @@ export default function Home() {
     <div className="pclooks">
     <div className="contactinfoMain">
       <div className="contactinfo flex flex-col p-5 rounded-md max-w-md items-start transition-all duration-300 ease-in-out">
-        <a className="contactinfo-a focus:shadow-boxFocus focus:outline-none py-2.5 px-5 rounded-md no-underline bg-white transition-all duration-300 ease-in-out shadow-md hover:shadow-lg transform hover:-translate-y-0.5 active:shadow  active:translate-y-0.5 text-blueCustom text-base flex items-center mb-2.5" href="tel: +1 403-320-6060"><img src="images/phone.svg" alt="" width={contactIconSize} height={contactIconSize} className={contactIconCSS}></img> +1 403-320-6060</a>
-        <a className="contactinfo-a focus:shadow-boxFocus focus:outline-none py-2.5 px-5 rounded-md no-underline bg-white transition-all duration-300 ease-in-out shadow-md hover:shadow-lg transform hover:-translate-y-0.5 active:shadow  active:translate-y-0.5 text-blueCustom text-base flex items-center mb-2.5" href="mailto: truckwash@vaneelive.com"><img  src="images/mail.svg" alt="" width={contactIconSize} height={contactIconSize} className={contactIconCSS}></img> truckwash@vaneelive.com</a>
-        <a className="contactinfo-a focus:shadow-boxFocus focus:outline-none py-2.5 px-5 rounded-md no-underline bg-white transition-all duration-300 ease-in-out shadow-md hover:shadow-lg transform hover:-translate-y-0.5 active:shadow  active:translate-y-0.5 text-blueCustom text-base flex items-center mb-2.5" href="https://www.google.com/maps?cid=10197179475260377286"><img src="images/place.svg" alt="" width={contactIconSize} height={contactIconSize} className={contactIconCSS}></img> 3716 9 Ave N, Lethbridge,
+        <a className="contactinfo-a focus:shadow-boxFocus focus:outline-none py-2.5 px-5 rounded-md no-underline bg-white transition-all duration-300 ease-in-out shadow-md hover:shadow-lg transform hover:-translate-y-0.5 active:shadow  active:translate-y-0.5 text-blueCustom text-base flex items-center mb-2.5" href="tel: +1 403-320-6060"><Image src="images/phone.svg" alt="" width={contactIconSize} height={contactIconSize} className={contactIconCSS}/> +1 403-320-6060</a>
+        <a className="contactinfo-a focus:shadow-boxFocus focus:outline-none py-2.5 px-5 rounded-md no-underline bg-white transition-all duration-300 ease-in-out shadow-md hover:shadow-lg transform hover:-translate-y-0.5 active:shadow  active:translate-y-0.5 text-blueCustom text-base flex items-center mb-2.5" href="mailto: truckwash@vaneelive.com"><Image  src="images/mail.svg" alt="" width={contactIconSize} height={contactIconSize} className={contactIconCSS}/> truckwash@vaneelive.com</a>
+        <a className="contactinfo-a focus:shadow-boxFocus focus:outline-none py-2.5 px-5 rounded-md no-underline bg-white transition-all duration-300 ease-in-out shadow-md hover:shadow-lg transform hover:-translate-y-0.5 active:shadow  active:translate-y-0.5 text-blueCustom text-base flex items-center mb-2.5" href="https://www.google.com/maps?cid=10197179475260377286"><Image src="images/place.svg" alt="" width={contactIconSize} height={contactIconSize} className={contactIconCSS}/> 3716 9 Ave N, Lethbridge,
           AB</a>
       </div>
     </div>
@@ -47,7 +48,7 @@ export default function Home() {
           <div className="media-body">
             <h4 className="OpeningT font-sans text-[#333] text-bold m-0">Office Hours</h4>
           </div>
-          <img className="" src="images/clock.svg" alt="" width={clockIconSize} height={clockIconSize} ></img>
+          <Image src="images/clock.svg" alt="" width={clockIconSize} height={clockIconSize} />
         </div>
         <table className="openinghours">
           <tbody>
@@ -89,15 +90,7 @@ export default function Home() {
     </div>
     
     
-    <footer className="bg-[#333] text-white p-5 text-center">
-    <div className="mb-2.5 flex flex-row justify-center">
-      <a className="text-white my-0 mx-2.5 text-2xl" href="https://www.facebook.com/profile.php?id=61558004790927" target="_blank">
-         <img src="images/facebook.svg" alt="" width={footerIcon-6} height={footerIcon-6}></img></a>
-      <a className="text-white my-0 mx-2.5 text-2xl" href="#" target="_blank"><img src="images/tiktok.svg" alt="" width={footerIcon} height={footerIcon}></img></a>
-      <a className="text-white my-0 mx-2.5 text-2xl" href="#" target="_blank"><img src="images/instagram.svg" alt="" width={footerIcon} height={footerIcon}></img></a>
-    </div>
-    <p>&copy; 2024 Vanee Truck Wash. All Rights Reserved.</p>
-    </footer>
+    <Footer />
         </>
   );
 }

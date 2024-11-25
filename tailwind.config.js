@@ -12,7 +12,7 @@ module.exports = {
       },
       colors: {
         background: "var(--background)",
-        foreground: "var(--foreground)",
+        
         'blueCustom': '#4e66f8',
       },
     },
