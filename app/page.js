@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <>
     <div className="text-center ">
-    <a href="#" className="inline-block">
+    <a href="https://vaneetruckwash.net" className="inline-block">
   <h1
     className="text-5xl bg-gradient-to-r from-blue-600 to-blue-400 text-transparent 
       bg-clip-text hover:scale-110 hover:duration-100 active:scale-95 
