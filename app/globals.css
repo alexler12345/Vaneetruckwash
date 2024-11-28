@@ -83,79 +83,20 @@ a:link {
     width: 41%;
   }
 
-  .timeMain {
-    padding-top: 23px;
-  }
-
-  .times {
-    max-width: 1000px; /* Expand container */
-    padding: 40px; /* Increase padding */
-    border-radius: 10px; /* Larger border radius */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Slightly stronger shadow */
-  }
-
-  .title-a {
-    font-size: 5vw;
-  }
+  
 
 
 
-  .contactinfoMain {
-    margin-bottom: 120px;
-  }
+ 
 
-  .contactinfo {
-    padding: 30px;
-    /* Increased padding */
-    border-radius: 10px;
-    /* Larger border radius */
-    max-width: 600px;
-    /* Increase the max width */
-    background-color: #f9f9f9;
-  }
 
-  .contactinfo-a {
-    font-size: 20px;
-    /* Larger font size */
-  }
+  
 
-  .contactinfo-a,
-  .contactinfo-a:first-child::before,
-  .contactinfo-a:nth-child(2)::before,
-  .contactinfo-a:nth-child(3)::before {
-    margin-right: 15px;
-    /* More space between icon and text */
-  }
+ 
 
-  .card-header {
-    padding-bottom: 15px; /* More padding */
-    margin-bottom: 15px; /* Increased margin */
-  }
+ 
 
-  .OpeningT {
-    font-size: 28px; /* Increase title font size */
-  }
 
-  i.far {
-    font-size: 50px; /* Larger icon */
-  }
-
-  /* Table Styles */
-  table.openinghours {
-    border-spacing: 0 10px; /* Increased spacing between rows */
-  }
-
-  table.openinghours th:not(.current-day-day, .open-now),
-  table.openinghours td:not(.current-day-day, .open-now) {
-    padding: 15px 20px; /* Larger padding */
-    border-radius: 8px; /* Larger radius for table cells */
-  }
-
-  table.openinghours th,
-  table.openinghours td {
-    padding: 18px 25px; /* Larger table cell padding */
-    font-size: 20px; /* Increase table font size */
-  }
 }
 
 /*tablet*/
@@ -172,35 +113,16 @@ a:link {
     margin-top: 50px;
   }
 
-  .contactinfo {
-    background-color: #f9f9f9;
-  }
-
-  .title-a {
-    font-size: 5vw;
-  }
+ 
 }
 
 
 /*phone*/
 @media screen and (max-width: 600px) {
-  .times {
-    max-width: 83%;
-    margin: 20px auto;
-  }
- .timeMain {
-    padding-bottom: 5px;
-    border-bottom: 1px solid #e9ecef;
-    order: 2;
-  }
-  .title-a {
-    font-size: 11vw;
-  }
+  
 
-  .contactinfo {
-    border-bottom: 1px solid #e9ecef;
-    background-color: #f9f9f9;
-  }
+
+ 
 
   .maps {
     border-bottom: 1px solid #e9ecef;
@@ -215,86 +137,6 @@ a:link {
 
 
 
-/* Table Styles */
-table.openinghours {
-  width: 100%;
-  border-collapse: separate;
-  border-spacing: 0 5px;
-}
-
-table.openinghours th:not(.current-day-day, .open-now),
-table.openinghours td:not(.current-day-day, .open-now) {
-  padding: 12px 15px;
-  text-align: left;
-  border-radius: 5px;
-  /* Add a radius to all table cells */
-}
-
-table.openinghours th {
-  background-color: #007bff;
-  color: #fff;
-}
-
-table.openinghours td {
-  background-color: #e9ecef;
-}
-
-/* Current Day Highlight */
-.current-day th,
-.current-day td {
-  background-color: #28a745 !important;
-  /* Green for the current day */
-  color: white !important;
-}
-
-.current-day-day {
-  padding: 12px 15px;
-  text-align: left;
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
-}
-
-.open-now {
-  padding: 12px 15px;
-  text-align: left;
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
-}
-
-/* Open Now and Closed Now Labels */
-.open-now::after {
-  content: " (Open Now)";
-  color: green;
-  font-weight: bold;
-}
-
-.closed-now::after {
-  content: " (Closed Now)";
-  color: red;
-  font-weight: bold;
-}
-
-/* Highlighted Row */
-table.openinghours tr.table-success th,
-table.openinghours tr.table-success td {
-  background-color: #28a745;
-  color: white;
-}
-
-/* Hover Effect */
-table.openinghours tr:hover th,
-table.openinghours tr:hover td {
-  background-color: #d1ecf1;
-  color: #333;
-}
-
-/* Closed Days Styling */
-table.openinghours tr#Saturday td,
-table.openinghours tr#Sunday td {
-  background-color: #f8d7da;
-  color: #721c24;
-  font-weight: bold;
-}
 
 
 
