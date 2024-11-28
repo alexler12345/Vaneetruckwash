@@ -1,6 +1,8 @@
 {
   "name": "Vanee Truck Wash",
   "short_name": "VTW",
+  "description": "locally owned and operated forever washing trucks, trailers and RV's",
+
   "icons": [
     {
       "src": "/web-app-manifest-192x192.png",
