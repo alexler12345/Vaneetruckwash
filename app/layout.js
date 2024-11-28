@@ -27,6 +27,16 @@ export default function RootLayout({ children }) {
             })(window,document,'script','dataLayer','GTM-5MHJN69F');
           `}
         </script>
+
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-5LJSLR3S2G"></script>
+<script> {`
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-5LJSLR3S2G');`}
+</script>
+
      
       <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/>
