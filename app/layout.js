@@ -10,10 +10,8 @@ const poppins = Noto_Sans({
 
 export const metadata = {
   title: "Vanee Truck Wash",
-  description: "Where Big Rigs Shine and Trailers Sparkle",
-  icons: {
-    icon: "/favicon.ico", // Path to your favicon
-  },
+  description: "Locally owned and operated forever washing trucks, trailers and RVs",
+
 };
 
 export default function RootLayout({ children }) {
@@ -30,14 +28,6 @@ export default function RootLayout({ children }) {
             })(window,document,'script','dataLayer','GTM-5MHJN69F');
           `}
         </script>
-
-        
-
-   <link rel='icon' href='./favicon.ico'/>
-      <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/>
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"/>
-<link rel="manifest" href="/site.webmanifest"/>
 
       </head>
       <body className='m-0 bg-[#f9f9f9]'>

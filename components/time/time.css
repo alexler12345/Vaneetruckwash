@@ -72,7 +72,6 @@ table.openinghours tr:hover td {
 }
 
 /* Closed Days Styling */
-table.openinghours tr#Saturday td,
 table.openinghours tr#Sunday td {
   background-color: #f8d7da;
   color: #721c24;

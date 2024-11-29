@@ -38,7 +38,7 @@ const clockIconSize = 47;
             </tr>
             <tr id="Saturday">
               <th>Saturday</th>
-              <td className="text-right">Closed</td>
+              <td className="text-right">8 AM–12 PM</td>
             </tr>
             <tr id="Sunday">
               <th>Sunday</th>
