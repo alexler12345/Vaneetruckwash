@@ -1,5 +1,5 @@
-import Link from "next/link";
 
+import CookieConsent from "@/components/cookiesconsent";
 import Footer from "@/components/footer";
 import Title from "@/components/title";
 import Contact from "@/components/contact";
@@ -26,7 +26,7 @@ export default function Home() {
     
     </div>
     </div>
-    
+    <CookieConsent />
     
     <Footer />
         </>
