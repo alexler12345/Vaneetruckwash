@@ -63,7 +63,7 @@ return (
   
     {/*<!-- Children's Privacy -->*/}
     <section class="space-y-4">
-      <h2 class="text-2xl font-semibold text-gray-800">Children's Privacy</h2>
+      <h2 class="text-2xl font-semibold text-gray-800">Children&apos;s Privacy</h2>
       <p class="text-gray-700">
         Our Service does not address anyone under the age of 13. We do not knowingly collect personally identifiable
         information from anyone under the age of 13. If You are a parent or guardian and You are aware that Your child
