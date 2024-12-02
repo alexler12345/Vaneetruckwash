@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 
 import { useState, useEffect } from "react";
 
@@ -24,12 +25,12 @@ export default function CookieConsent() {
           <div className="flex flex-col md:flex-row md:items-center justify-between">
             <p className="text-gray-700 mb-4 md:mb-0">
               We use cookies to ensure you get the best experience on our website. By continuing, you agree to our
-              <a
+              <Link
                 href="/privacy-policy"
                 className="text-blue-600 underline ml-1 hover:text-blue-500"
               >
                 Privacy Policy
-              </a>.
+              </Link>.
             </p>
             <button
               onClick={handleAccept}
