@@ -8,11 +8,7 @@ const poppins = Noto_Sans({
   display: 'swap',
 })
 
-export const metadata = {
-  title: "Vanee Truck Wash",
-  description: "Locally owned and operated forever washing trucks, trailers and RVs",
 
-};
 
 export default function RootLayout({ children }) {
   return (

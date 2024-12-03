@@ -4,6 +4,13 @@ import Footer from "@/components/footer";
 import Title from "@/components/title";
 import Contact from "@/components/contact";
 import Time from "@/components/time/time";
+
+
+export const metadata = {
+  title: "Vanee Truck Wash",
+  description: "Locally owned and operated forever washing trucks, trailers and RVs",
+
+};
 export default function Home() {
  
   
@@ -26,7 +33,8 @@ export default function Home() {
     
     </div>
     </div>
-    <CookieConsent />
+    {/*uncomment this code when ToS and PP are done (talk to davin about hr team or some lawyers to make it) */}
+    {/*<CookieConsent />*/}
     
     <Footer />
         </>
