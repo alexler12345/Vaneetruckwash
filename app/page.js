@@ -11,6 +11,7 @@ export const metadata = {
   description: "Locally owned and operated forever washing trucks, trailers and RVs",
 
 };
+
 export default function Home() {
  
   
