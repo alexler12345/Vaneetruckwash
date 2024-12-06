@@ -18,6 +18,10 @@ table.openinghours {
   border-bottom-left-radius: 0px !important;
 
 }
+
+
+
+/*dark*/
 @media (prefers-color-scheme: dark) {
 
   table.openinghours td {
@@ -45,6 +49,10 @@ table.openinghours:hover td:not(.current-day td){
 }
 }
 
+
+
+
+/*light*/
 @media (prefers-color-scheme: light) {
 
  
@@ -90,16 +98,13 @@ table.openinghours td:not(.current-day-day, .open-now) {
   /* Add a radius to all table cells */
 }
 
-table.openinghours th {
+table.openinghours th,
+table.openinghours:hover th:not(.current-day th) {
   background-color: var(--secondary);
   color: var(--text2);
-}
-table.openinghours:hover th:not(.current-day th){
-  background-color: var(--secondary) !important;
-  color: var(--text2) !important;
   cursor: default;
-
 }
+
 
 /* Current Day Highlight */
 
