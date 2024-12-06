@@ -13,6 +13,19 @@
   --contactBorder: #ddd;
 }
 
+
+/*
+Primary Blue (#4A90E2): Buttons, links, highlights.
+Secondary Blue (#007AFF): Hover states, active states.
+Accent Blue (#1FB6FF): Highlights, subtle calls to action.
+Dark Blue (#005BB5): Headers, footer backgrounds.
+Light Blue (#E5F6FF): Background for cards or components.
+Gray Dark (#2D2D2D): Text, navigation elements.
+Gray Medium (#A8A8A8): Disabled states, borders.
+Gray Light (#F5F5F5): Backgrounds.
+Accent Gray (#6E7A89): Alternative borders, subtle UI elements.
+*/
+
 @media (prefers-color-scheme: dark) {
   :root {
     --background:  #1C2833;
