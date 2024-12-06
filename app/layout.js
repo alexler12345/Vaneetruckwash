@@ -31,7 +31,7 @@ export default function RootLayout({ children }) {
 <meta name="apple-mobile-web-app-title" content="VTW" />
 <link rel="manifest" href="/site.webmanifest" />
       </head>
-      <body className='m-0 bg-[#f9f9f9]'>
+      <body className='m-0'>
       <noscript>
           <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-5MHJN69F"
