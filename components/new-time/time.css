@@ -28,12 +28,7 @@ table.openinghours {
     background-color: var(--primary);
   }
 
-  .current-day th,
-.current-day td {
-  background-color: var(--highlight) !important;
-  /* Green for the current day */
-  color: var(--text1) !important;
-}
+  
 
 table.openinghours:hover td:not(.current-day td){
   background-color: var(--primary);
@@ -42,7 +37,9 @@ table.openinghours:hover td:not(.current-day td){
   }
 
   .current-day:hover td,
-.current-day:hover th{
+.current-day:hover th,
+.current-day th,
+.current-day td{
   cursor: default;
   background-color: var(--highlight) !important;
   color: var(--text1) !important;
