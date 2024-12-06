@@ -25,14 +25,14 @@ table.openinghours {
 @media (prefers-color-scheme: dark) {
 
   table.openinghours td {
-    background-color: var(--primary);
+    background-color: #2C3E50;
   }
 
   
 
 table.openinghours:hover td:not(.current-day td){
-  background-color: var(--primary);
-  color: var(--text1);
+  background-color: #2C3E50;
+  color: #D1E8FF;
   cursor: default;
   }
 
@@ -41,8 +41,8 @@ table.openinghours:hover td:not(.current-day td){
 .current-day th,
 .current-day td{
   cursor: default;
-  background-color: var(--highlight) !important;
-  color: var(--text1) !important;
+  background-color: #85C1E9 !important;
+  color: #D1E8FF !important;
 }
 }
 
