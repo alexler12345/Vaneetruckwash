@@ -21,6 +21,7 @@ module.exports = {
         secondary2: "var(--secondary)",
         contactBG: "var(--contactBG)",
         contactBorder: "var(--contactBorder)",
+        titlecard: 'var(--titlecard)',
         'titlegray': '#ffffff',
         'borderlight': '#ddd',
         'blueCustom': '#4e66f8',

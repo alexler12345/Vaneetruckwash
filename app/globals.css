@@ -11,20 +11,14 @@
   --highlight: #4e66f8;
   --contactBG: #fff;
   --contactBorder: #ddd;
+  --titlecard: var(--primary);
+  --closed: #ff0000;
+  --closing: #ff0000;
+  --opening: #ff0000;
 }
 
 
-/*
-Primary Blue (#4A90E2): Buttons, links, highlights.
-Secondary Blue (#007AFF): Hover states, active states.
-Accent Blue (#1FB6FF): Highlights, subtle calls to action.
-Dark Blue (#005BB5): Headers, footer backgrounds.
-Light Blue (#E5F6FF): Background for cards or components.
-Gray Dark (#2D2D2D): Text, navigation elements.
-Gray Medium (#A8A8A8): Disabled states, borders.
-Gray Light (#F5F5F5): Backgrounds.
-Accent Gray (#6E7A89): Alternative borders, subtle UI elements.
-*/
+
 
 @media (prefers-color-scheme: dark) {
   :root {
@@ -36,9 +30,10 @@ Accent Gray (#6E7A89): Alternative borders, subtle UI elements.
   --highlight: #85C1E9;
   --text1: #D1E8FF;
   --text2: #D1E8FF;
-  --secondary2: #34495E;
+  --secondary2: #728da8;
   --contactBG: #2C3E50;
   --contactBorder: #34495E;
+  --titlecard: #fff;
   }
 }
 

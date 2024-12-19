@@ -3,7 +3,6 @@ import CookieConsent from "@/components/cookiesconsent";
 import Footer from "@/components/footer";
 import Title from "@/components/title";
 import Contact from "@/components/contact";
-import Time from "@/components/time/time";
 import NewContact from "@/components/new-contact";
 import NewTime from "@/components/new-time/time";
 
@@ -35,7 +34,7 @@ export default function Home() {
     <div className="pclooks2">
    
    
-    <NewTime/>
+    <NewTime t={false} />
     </div>
     </div>
     {/*uncomment this code when ToS and PP are done (talk to davin about hr team or some lawyers to make it) */}

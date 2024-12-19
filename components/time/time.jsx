@@ -6,11 +6,11 @@ const clockIconSize = 47;
 
   return (
     <>
-     <div className="timeMain pb-1 order-2 lg:pt-6 flex justify-center">
-      <div className="times px-9 p-5 border border-solid border-[#ddd] rounded-lg shadow-lg bg-[#f9f9f9] transition-all duration-300 ease-in-out max-w-[83%] lg:max-w-[1000px] lg:p-10 lg:shadow-xl ">
-        <div className="card-header flex justify-between items-center pb-2.5 border-b border-solid border-[#ddd] m-2.5 lg:pb-4 lg:mb-4">
+     <div className="flex justify-center order-2 lg:pt-6 pb-1 timeMain">
+      <div className="border-[#ddd] bg-[#f9f9f9] shadow-lg lg:shadow-xl px-9 p-5 lg:p-10 border border-solid rounded-lg max-w-[83%] lg:max-w-[1000px] transition-all duration-300 ease-in-out times">
+        <div className="flex justify-between items-center border-[#ddd] m-2.5 lg:mb-4 pb-2.5 lg:pb-4 border-b border-solid card-header">
           <div className="media-body">
-            <h4 className="OpeningT font-sans text-[#333] text-bold m-0 md:text-2xl text-xl">Office Hours</h4>
+            <h4 className="m-0 font-sans text-[#333] text-bold text-xl md:text-2xl OpeningT">Office Hours</h4>
           </div>
           <Image src="images/clock.svg" alt="" width={clockIconSize} height={clockIconSize} />
         </div>
@@ -38,7 +38,7 @@ const clockIconSize = 47;
             </tr>
             <tr id="Saturday">
               <th>Saturday</th>
-              <td className="text-right">8 AM–12 PM</td>
+              <td className="text-right">Closed</td>
             </tr>
             <tr id="Sunday">
               <th>Sunday</th>
@@ -54,4 +54,3 @@ const clockIconSize = 47;
   );
 }
 
-export default Time
