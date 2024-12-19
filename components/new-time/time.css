@@ -34,9 +34,9 @@ table.openinghours {
   .open td,
   .closing th,
   .closing td {
-    background-color: #28a745 !important;
+    background-color: #30CA55 !important;
     /* Green for the current day */
-    color: white !important;
+    color: black !important;
   }
 /*dark*/
 @media (prefers-color-scheme: dark) {
