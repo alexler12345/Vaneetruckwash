@@ -1,55 +1,65 @@
+'use client'
 import './time.css'
-import isOfficeOpen from '../subComp/whatTime';
-import { WhatDay } from '../subComp/whatTime';
+import isOfficeOpen from '../subComp/isOpen'
+import { useEffect } from 'react'
 
-export default async function Timetable() {
-  // Fetch or calculate shop status on the server
-  const currentDay = WhatDay(); // Current day (e.g., "Monday")
-  const officeOpenNum = isOfficeOpen(); // Office status (0, 1, 2, 3)
 
-  // Map the status number to a readable string
-  const shopStat = {
-    0: 'closed',
-    1: 'open',
-    2: 'closing',
-    3: 'opening',
-  };
+export default function Timetable () {
+  
+ 
+  const isOpen= isOfficeOpen() 
+  
+ useEffect(() => {
 
-  const shopStatNum = shopStat[officeOpenNum]; // Get the status text
 
-  const shopStatusClasses = {
-    closed: 'closed',
-    open: 'open',
-    closing: 'closing',
-    opening: 'opening',
-  };
+ const day = new Intl.DateTimeFormat('en-US', {
+    timeZone: 'America/Denver',
+    weekday: 'long'
+  }).format(new Date())
+const t = document.getElementById(new Intl.DateTimeFormat('en-US', {
+  timeZone: 'America/Denver',
+  weekday: 'long'
+}).format(new Date()))
 
-  const timetable = [
-    { day: 'Monday', hours: '8 AM–5 PM' },
-    { day: 'Tuesday', hours: '8 AM–5 PM' },
-    { day: 'Wednesday', hours: '8 AM–5 PM' },
-    { day: 'Thursday', hours: '8 AM–5 PM' },
-    { day: 'Friday', hours: '8 AM–5 PM' },
-    { day: 'Saturday', hours: 'Closed' },
-    { day: 'Sunday', hours: 'Closed' },
-  ];
+  if (isOpen) {
+    t.classList.add('open')
+  } if (!isOpen){
+    t.classList.add('closed')
+  } 
 
+ })
   return (
-    <table className="openinghours">
+    <table className='openinghours'>
       <tbody>
-        {timetable.map((entry, index) => (
-          <tr
-            key={index}
-            id={entry.day}
-            className={
-              entry.day === currentDay ? shopStatusClasses[shopStatNum] : ''
-            }
-          >
-            <th>{entry.day}</th>
-            <td className="text-right">{entry.hours}</td>
-          </tr>
-        ))}
+        <tr id='Monday'>
+          <th>Monday</th>
+          <td className='text-right'>8 AM–5 PM</td>
+        </tr>
+        <tr id='Tuesday'>
+          <th>Tuesday</th>
+          <td className='text-right'>8 AM–5 PM</td>
+        </tr>
+        <tr id='Wednesday'>
+          <th>Wednesday</th>
+          <td className='text-right'>8 AM–5 PM</td>
+        </tr>
+        <tr id='Thursday'>
+          <th>Thursday</th>
+          <td className='text-right'>8 AM–5 PM</td>
+        </tr>
+        <tr id='Friday'>
+          <th>Friday</th>
+          <td className='text-right'>8 AM–5 PM</td>
+        </tr>
+        <tr id='Saturday'>
+          <th>Saturday</th>
+          <td className='text-right'>Closed</td>
+        </tr>
+        <tr id='Sunday'>
+          <th>Sunday</th>
+          <td className='text-right'>Closed</td>
+        </tr>
       </tbody>
     </table>
-  );
+  )
 }
