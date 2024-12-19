@@ -62,14 +62,14 @@ export function WhatDay () {
 }
 
 export function ServerTime () {
-   const serverTime = '17:00:00' // Simulated
- //const serverTime = new Intl.DateTimeFormat('en-US', {
-  //  timeZone: 'America/Denver',
-   // hour: '2-digit',
-   // minute: '2-digit',
-   // second: '2-digit',
-  //  hour12: false
- // }).format(new Date())
+   //const serverTime = '17:00:00' // Simulated
+ const serverTime = new Intl.DateTimeFormat('en-US', {
+    timeZone: 'America/Denver',
+    hour: '2-digit',
+    minute: '2-digit',
+   second: '2-digit',
+   hour12: false
+  }).format(new Date())
  /// console.log(`Server Time: ${serverTime}`) //dev
   return serverTime
 }
