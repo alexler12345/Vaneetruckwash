@@ -8,17 +8,13 @@ const poppins = Noto_Sans({
   display: 'swap',
 })
 
-export const metadata = {
-  title: "Vanee Truck Wash",
-  description: "Locally owned and operated forever washing trucks, trailers and RVs",
 
-};
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={poppins.className}>
       <head>
-
+      <meta name="robots" content="noindex"/>
       <script id="google-tag-manager" strategy="afterInteractive">
           {`
             (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -35,7 +31,7 @@ export default function RootLayout({ children }) {
 <meta name="apple-mobile-web-app-title" content="VTW" />
 <link rel="manifest" href="/site.webmanifest" />
       </head>
-      <body className='m-0 bg-[#f9f9f9]'>
+      <body className='m-0'>
       <noscript>
           <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-5MHJN69F"
