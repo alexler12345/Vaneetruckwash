@@ -3,7 +3,7 @@ import Footer from '@/components/footer';
 import Title from '@/components/title';
 import NewContact from '@/components/new-contact';
 import NewTime from '@/components/new-time/time';
-import Bio from '@/components/bio';
+
 
 export const metadata = {
   title: 'Vanee Truck Wash',
