@@ -7,7 +7,8 @@ import { theDay } from '../subComp/isOpen'
 
 export default function Timetable () {
   
- 
+  console.log('it looks like your looking at the  source code lucky for you all of it is on https://github.com/alexler12345/vtww-v3.beta.git')
+
   const isOpen= isOfficeOpen() 
   
  useEffect(() => {
