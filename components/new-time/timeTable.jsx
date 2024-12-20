@@ -2,6 +2,7 @@
 import './time.css'
 import isOfficeOpen from '../subComp/isOpen'
 import { useEffect } from 'react'
+import { theDay } from '../subComp/isOpen'
 
 
 export default function Timetable () {
@@ -12,14 +13,8 @@ export default function Timetable () {
  useEffect(() => {
 
 
- const day = new Intl.DateTimeFormat('en-US', {
-    timeZone: 'America/Denver',
-    weekday: 'long'
-  }).format(new Date())
-const t = document.getElementById(new Intl.DateTimeFormat('en-US', {
-  timeZone: 'America/Denver',
-  weekday: 'long'
-}).format(new Date()))
+ 
+const t = document.getElementById(theDay)
 
   if (isOpen) {
     t.classList.add('open')
