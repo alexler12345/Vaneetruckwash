@@ -24,7 +24,7 @@ export default async function Home() {
     events.setUTCHours(0,0,0,0);
    const calendarId = ["a16c4aac33575e5eddfc40fac317fc414d26f123a733f3651cacbe268e85f3a4@group.calendar.google.com","e6e9e8c902d57bb7f9d63b62c5831292c8246381ed1c6931e063168ba924bc24@group.calendar.google.com"]; // Replace with your calendar ID
    const baseUrl = "https://www.googleapis.com/calendar/v3/calendars";
-   const apiKey = null; // Use your API key from environment variables
+   const apiKey = process.env.API_KEY; // Use your API key from environment variables
    var o = []
    if (!apiKey) {
     console.warn('No google API key found using default times')
@@ -37,10 +37,10 @@ export default async function Home() {
 
      const url = `${baseUrl}/${encodeURIComponent(calendarId[i])}/events?key=${apiKey}&orderBy=startTime&singleEvents=true&timeMin=${events.toISOString()}&timeMax=${event.toISOString()}`;
 
-//86400
+
 try {
 
- const response = await fetch(url,{next: {revalidate: 5}})
+ const response = await fetch(url,{next: {revalidate: 86400}})
  if (response.ok) {
   const data = await response.json()
 
