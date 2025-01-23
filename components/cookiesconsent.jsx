@@ -17,24 +17,23 @@ export default function CookieConsent() {
     localStorage.setItem("cookieConsent", "true");
     setShowPopup(false);
   };
-
   return (
     <>
       {showPopup && (
-        <div className="fixed bottom-4 left-4 right-4 md:left-8 md:right-8 z-50 bg-white border border-gray-300 rounded-lg shadow-lg p-4 text-sm md:text-base">
-          <div className="flex flex-col md:flex-row md:items-center justify-between">
-            <p className="text-gray-700 mb-4 md:mb-0">
+        <div className="right-4 md:right-8 bottom-4 left-4 md:left-8 z-50 fixed border-gray-300 bg-white shadow-lg p-4 border rounded-lg text-sm md:text-base">
+          <div className="flex md:flex-row flex-col justify-between md:items-center">
+            <p className="mb-4 md:mb-0 text-gray-700">
               We use cookies to ensure you get the best experience on our website. By continuing, you agree to our
               <Link
                 href="/privacy-policy"
-                className="text-blue-600 underline ml-1 hover:text-blue-500"
+                className="ml-1 text-blue-600 hover:text-blue-500 underline"
               >
                 Privacy Policy
               </Link>.
             </p>
             <button
               onClick={handleAccept}
-              className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-500 transition duration-200"
+              className="bg-blue-600 hover:bg-blue-500 px-4 py-2 rounded-md text-white transition duration-200"
             >
               Accept
             </button>

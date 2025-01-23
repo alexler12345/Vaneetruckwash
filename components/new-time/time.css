@@ -6,17 +6,13 @@ table.openinghours {
 }
 
 .open th,
-.closed th,
-.closing th,
-.opening th {
+.closed th{
   border-top-right-radius: 0px !important;
   border-bottom-right-radius: 0px !important;
 }
 
 .closed td,
-.closed th,
-.opening td,
-.opening th {
+.closed th{
   cursor: default !important;
   background-color: var(--closed) !important;
   color: white !important;
@@ -24,16 +20,12 @@ table.openinghours {
 
 
 .open td,
-.closed td,
-.closing td,
-.opening td {
+.closed td{
   border-top-left-radius: 0px !important;
   border-bottom-left-radius: 0px !important;
 }
 .open th,
-  .open td,
-  .closing th,
-  .closing td {
+  .open td{
     background-color: #30CA55 !important;
     /* Green for the current day */
     color: black !important;
@@ -43,7 +35,7 @@ table.openinghours {
  
 
   table.openinghours
-    td:not(.current-day td, .closed td) {
+    td:not(.closed td, .offDays) {
     background-color: #2c3e50;
     color: #d1e8ff;
     cursor: default;
@@ -56,7 +48,7 @@ table.openinghours {
 /*light*/
 @media (prefers-color-scheme: light) {
   table.openinghours
-    td:not(.current-day td, .closed td) {
+    td:not(.closed td, .offDays) {
     background-color: #e9ecef;
     color: black; 
     cursor: default;
@@ -77,7 +69,7 @@ table.openinghours td {
 }
 
 table.openinghours
-  th:not(.current-day th, .closed th) {
+  th:not(.closed th) {
   background-color: var(--secondary);
   color: var(--text2);
   cursor: default;
@@ -85,8 +77,7 @@ table.openinghours
 
 
 /* Closed Days Styling */
-table.openinghours tr#Sunday td,
-table.openinghours tr#Saturday td {
+.offDays{
   background-color: #f8d7da;
   color: #721c24;
   font-weight: bold;
@@ -103,7 +94,7 @@ table.openinghours tr#Saturday td {
   table.openinghours td {
     padding: 15px 20px; /* Larger padding */
     border-radius: 8px; /* Larger radius for table cells */
-    font-size: 20px; /* Increase table font size */
+   
   }
 
 }

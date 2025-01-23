@@ -1,8 +1,10 @@
-import CookieConsent from '@/components/cookiesconsent';
+
 import Footer from '@/components/footer';
 import Title from '@/components/title';
 import NewContact from '@/components/new-contact';
 import NewTime from '@/components/new-time/time';
+import { FormCal } from "@/components/subComp/test";
+import { Defaulttime } from '@/components/subComp/calandertimes';
 
 
 export const metadata = {
@@ -10,9 +12,57 @@ export const metadata = {
   description: 'Locally owned and operated forever washing trucks, trailers and RVs',
 };
 
-export default function Home() {
+
+
+
+
+export default async function Home() {
+  const event = new Date()
+  event.setUTCHours(23,59,59,59);
+   event.getDate(event.setDate(event.getDate()+6))
+   const events = new Date()
+    events.setUTCHours(0,0,0,0);
+   const calendarId = ["a16c4aac33575e5eddfc40fac317fc414d26f123a733f3651cacbe268e85f3a4@group.calendar.google.com","e6e9e8c902d57bb7f9d63b62c5831292c8246381ed1c6931e063168ba924bc24@group.calendar.google.com"]; // Replace with your calendar ID
+   const baseUrl = "https://www.googleapis.com/calendar/v3/calendars";
+   const apiKey = null; // Use your API key from environment variables
+   var o = []
+   if (!apiKey) {
+    console.warn('No google API key found using default times')
+    o[0] = Defaulttime[0]
+
+    o[1] = Defaulttime[1]
+   } else {
+   
+ for (let i=0; i<2; i++){
+
+     const url = `${baseUrl}/${encodeURIComponent(calendarId[i])}/events?key=${apiKey}&orderBy=startTime&singleEvents=true&timeMin=${events.toISOString()}&timeMax=${event.toISOString()}`;
+
+//86400
+try {
+
+ const response = await fetch(url,{next: {revalidate: 5}})
+ if (response.ok) {
+  const data = await response.json()
+
+  o[i] = FormCal(data)
+  
+
+ } else {
+  console.warn('Promise resolved but HTTP status failed \n Using default times');
+  o[i] = Defaulttime[i]
+}
+} catch {
+console.error('Promise rejected');
+}
+ 
+
+  
+ }
+}
+
   return (
     <>
+
       <Title />
 
       <div
@@ -31,12 +81,9 @@ export default function Home() {
           </div>
         </div>
         <div className="flex flex-col w-full lg:w-[50%]">
-          <NewTime t={false} />
+          <NewTime {...o}/>
         </div>
       </div>
-
-      {/* Uncomment this code when ToS and PP are done (talk to Davin about HR team or some lawyers to make it) */}
-      {/*<CookieConsent />*/}
 
       <Footer />
     </>

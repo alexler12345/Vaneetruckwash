@@ -15,15 +15,7 @@ export default function RootLayout({ children }) {
     <html lang="en" className={poppins.className}>
       <head>
      
-      <script id="google-tag-manager" strategy="afterInteractive">
-          {`
-            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-            })(window,document,'script','dataLayer','GTM-5MHJN69F');
-          `}
-        </script>
+      
         <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <link rel="shortcut icon" href="/favicon.ico" />
@@ -33,14 +25,6 @@ export default function RootLayout({ children }) {
 <link rel="canonical" href="https://vaneetruckwash.net"/>
       </head>
       <body className='m-0'>
-      <noscript>
-          <iframe
-            src="https://www.googletagmanager.com/ns.html?id=GTM-5MHJN69F"
-            height="0"
-            width="0"
-            style={{ display: "none", visibility: "hidden" }}
-          ></iframe>
-        </noscript>
         {children}
 
       </body>
