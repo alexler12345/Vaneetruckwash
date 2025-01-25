@@ -20,9 +20,12 @@ function Title() {
             Vanee Truck Wash
           </h1>
         </a>
-        
-        <hr className="mt-6 mb-3 border"></hr>
+        {/*mb-3 */}
+        <hr className="mt-6 border"></hr> 
+        {/*TEMP */}
+        <div className="bg-red-600 w-full h-max text-white">ALL BAYS CLOSED FOR MAINTENANCE ON JANUARY 28 FROM 7 AM TO 12 PM</div>
       </div>
+     
     </>
   );
 }

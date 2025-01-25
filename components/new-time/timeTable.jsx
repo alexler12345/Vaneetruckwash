@@ -18,14 +18,26 @@ function convertTo12Hour(start,end) {
   
   if (!start || !end) {
     return 'Closed'
-  }
+  } else {  
   const [hours1, minutes1, seconds1] = start.split(':').map(Number);
   const [hours2, minutes2, seconds2] = end.split(':').map(Number);
+ 
+  if (hours1 == 24) {
+    hours1 = 0
+  }
+  if (hours2 == 24) {
+ hours2 =  0
+  }
   const period1 = hours1 >= 12 ? 'PM' : 'AM';
   const period2 = hours2 >= 12 ? 'PM' : 'AM';
   const hours122 = hours2 % 12 || 12;
   const hours121 = hours1 % 12 || 12; // Convert "0" to "12" for midnight
-  return `${hours121} ${period1}-${hours122} ${period2}`;
+  let timeOne = `${hours121} ${period1}`
+  let timeTwo = `${hours122} ${period2}`;
+    
+    return `${timeOne}-${timeTwo}`
+  }
+
 }
 
 
@@ -164,16 +176,16 @@ export default function Timetable (p) {
       >
         <th>{next7Days[index]}</th>
         <td
-          className={`text-right ${
-            convertTo12Hour(dayData.start, dayData.end) === 'Closed' &&
-            dayData.isallday === false
+          className={`text-right ${ //adds CSS classes
+            convertTo12Hour(dayData.start, dayData.end) == 'Closed' &&
+            dayData.isallday == false
               ? 'offDays'
               : ''
           }`}
         >
-          {dayData.isallday && dayData.start == null
+          {dayData.isallday && dayData.start == null 
             ? '24 hours'
-            : convertTo12Hour(dayData.start, dayData.end)}
+            : dayData.title == 'CLOSED' ? `Closed till ${convertTo12Hour(dayData.start,dayData.end)}` : convertTo12Hour(dayData.start, dayData.end) }
         </td>
       </tr>
     );
