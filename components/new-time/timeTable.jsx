@@ -176,7 +176,7 @@ export default function Timetable (p) {
       >
         <th>{next7Days[index]}</th>
         <td
-          className={`text-right ${ //adds CSS classes
+          className={`text-right ${
             convertTo12Hour(dayData.start, dayData.end) == 'Closed' &&
             dayData.isallday == false
               ? 'offDays'
@@ -185,7 +185,7 @@ export default function Timetable (p) {
         >
           {dayData.isallday && dayData.start == null 
             ? '24 hours'
-            : dayData.title == 'CLOSED' ? `Closed till ${convertTo12Hour(dayData.start,dayData.end)}` : convertTo12Hour(dayData.start, dayData.end) }
+            : dayData.title == 'CLOSED' ? `Closed from ${convertTo12Hour(dayData.start,dayData.end)}` : convertTo12Hour(dayData.start, dayData.end) }
         </td>
       </tr>
     );
