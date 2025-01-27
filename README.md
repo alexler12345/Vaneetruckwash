@@ -4,7 +4,8 @@ if you want to help out please email me at Alex.holley761@gmail.com
 
 How to build:
 
-
+MUST INSTALL NODE.JS 
+as this is a nextjs build nodejs is needed to do that go to https://nodejs.org/en/download 
 
 1.) download file with 
 got clone https://github.com/alexler12345/Vaneetruckwash.git
