@@ -1,8 +1,25 @@
-export function FormCal (l) {
+
+export function FormCal (uncloned) {
+  
+    var t = structuredClone(uncloned)
+    
+    const raw = t.items.filter((element) => {
+      return !element.summary.toUpperCase().includes('CLOSED') 
+    })
+
+    const notraw = t.items.filter((element) => {
+      return element.summary.toUpperCase().includes('CLOSED')
+    })
+
+
+
   
     
 
-  const data = l
+   
+  
+    
+ 
   const numtoDay = [
     'Sunday',
     'Monday',
@@ -12,29 +29,34 @@ export function FormCal (l) {
     'Friday',
     'Saturday'
   ]
-
-  var officeHours = {
-    Monday: { start: null, end: null, isallday: false, title: ''},
-    Tuesday: { start: null, end: null, isallday: false, title: ''},
-    Wednesday: { start: null, end: null, isallday: false, title: ''},
-    Thursday: { start: null, end: null, isallday: false, title: ''},
-    Friday: { start: null, end: null, isallday: false , title: ''},
-    Saturday: { start: null, end: null, isallday: false, title: ''},
-    Sunday: { start: null, end: null, isallday: false, title: ''}
+  //makes officeHours object template
+  var officeHours = {}
+  for (let i = 0; i < 7; i++) {
+    officeHours[numtoDay[i]]= {start: null, end: null, isallday: false}
   }
 
-  var temp = data.items
-
+  
+  
   
 
+const temp = raw
+if (notraw && notraw.length >= 1) {
+officeHours.extras = numtoDay[new Date(notraw[0].start.dateTime).getDay()]
+}
 
+//for loop that goes through every item on list
   for (var i = 0; i < temp.length; i++) {
-    if (!temp[i].start.dateTime) {//if true then that day is all day
+    
+    
+//if true then that day is all day
+    if (!temp[i].start.dateTime) {
       var k = numtoDay[new Date(temp[i].start.date).getDay() + 1]
       officeHours[k].isallday = true
-    } else {
-      var o = numtoDay[new Date(temp[i].start.dateTime).getDay()]
-     
+    } //end of if statment
+    //if event is not all day then do this
+    else {
+      
+      var o = numtoDay[new Date(temp[i].start.dateTime).getDay()] //get the day of the event
      
      let start = new Intl.DateTimeFormat('en-US', {
         timeZone: 'America/Denver',
@@ -42,7 +64,7 @@ export function FormCal (l) {
         minute: '2-digit',
         second: '2-digit',
         hour12: false
-      }).format(new Date(temp[i].start.dateTime))
+      }).format(new Date(temp[i].start.dateTime)) //format it into this format: 00:00:00 for start time
      
         let end = new Intl.DateTimeFormat('en-US', {
         timeZone: 'America/Denver',
@@ -50,17 +72,19 @@ export function FormCal (l) {
         minute: '2-digit',
         second: '2-digit',
         hour12: false
-      }).format(new Date(temp[i].end.dateTime)) 
-      if (temp[i].summary == 'CLOSED') {
-       officeHours[o].title = temp[i].summary
-      } 
-      officeHours[o].start = start 
+      }).format(new Date(temp[i].end.dateTime)) //format it into this format: 00:00:00 for end time
+
+      
+
+      officeHours[o].start = start //assign formated time to object for start and end
       officeHours[o].end = end
       
       
       }
   
-  }
+  }//end of for loop
+
+
 
 
   return officeHours

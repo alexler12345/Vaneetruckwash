@@ -5,7 +5,6 @@ import { useState } from 'react'
 
 
 
-
 // Function to check if the office is open
 
 export const formatter = new Intl.DateTimeFormat('en-US', {
@@ -16,27 +15,25 @@ export const formatter = new Intl.DateTimeFormat('en-US', {
 
 function convertTo12Hour(start,end) {
   
-  if (!start || !end) {
+  
+  if (!start && !end) {
     return 'Closed'
-  } else {  
+  } else { 
+   
   const [hours1, minutes1, seconds1] = start.split(':').map(Number);
   const [hours2, minutes2, seconds2] = end.split(':').map(Number);
  
-  if (hours1 == 24) {
-    hours1 = 0
-  }
-  if (hours2 == 24) {
- hours2 =  0
-  }
+  
   const period1 = hours1 >= 12 ? 'PM' : 'AM';
   const period2 = hours2 >= 12 ? 'PM' : 'AM';
   const hours122 = hours2 % 12 || 12;
   const hours121 = hours1 % 12 || 12; // Convert "0" to "12" for midnight
   let timeOne = `${hours121} ${period1}`
   let timeTwo = `${hours122} ${period2}`;
-    
+  
     return `${timeOne}-${timeTwo}`
-  }
+  
+}
 
 }
 
@@ -72,7 +69,7 @@ function isOfficeOpen (who) {
     isOpen = true //open
   }
   if (serverTime < dayHours.start || serverTime > dayHours.end) {
-    isOpen = false
+    isOpen = false 
   }
   return isOpen
 }
@@ -80,13 +77,16 @@ function isOfficeOpen (who) {
 
 
 export default function Timetable (p) {
-  //true = office hours //false = bay hours
+  
+
+ 
+ //0 = office hours 1 = bay hours
   const [Timedata, setTimedata] = useState(0)
 
  
+  
+  var who = p[Timedata]
  
-  const who = structuredClone(p[Timedata])
-
 
 
   console.log(
@@ -119,36 +119,43 @@ export default function Timetable (p) {
     <>
    
    <div className='flex justify-between items-center m-2.5 lg:mb-4 pb-2.5 lg:pb-4 border-b border-b-highlight card-header'>
-          <div tabIndex={0} className='flex border-2 focus:border-5 shadow-sm focus:border-blue-100 rounded-md transition-all hover:-translate-y-0.5 active:translate-y-0.5 duration-300 select-none ease-in-out' onClick={toggleData}>
-          <div className='media-body'>
-                    <h4
-                      
-                      className='m-0 font-sans text-[#333] text-bold text-xl md:text-2xl dark:text-text1 OpeningT'
-                    >
-                      {Timedata == 0 ? 'Office hours' : 'Bay hours'}
-                    </h4>
-                  </div>
-                  
-                    <svg
-                      className='pr-1'
-                      fill='#000000'
-                      width='32px'
-                      height='32px'
-                      viewBox='0 0 32 32'
-                      xmlns='http://www.w3.org/2000/svg'
-                    >
-                      <g id='SVGRepo_bgCarrier' strokeWidth='0'></g>
-                      <g
-                        id='SVGRepo_tracerCarrier'
-                        strokeLinecap='round'
-                        strokeLinejoin='round'
-                      ></g>
-                      <g id='SVGRepo_iconCarrier'>
-                        <path d='M16.003 18.626l7.081-7.081L25 13.46l-8.997 8.998-9.003-9 1.917-1.916z'></path>
-                      </g>
-                    </svg>
-                  
-          </div>
+   <div
+  tabIndex={0} // Make the div focusable
+  className='flex border-2 focus:border-5 shadow-sm focus:border-blue-100 rounded-md transition-all hover:-translate-y-0.5 active:translate-y-0.5 duration-300 select-none ease-in-out'
+  onClick={toggleData} // Handle click
+  onKeyDown={(e) => {
+    if (e.key === 'Enter') { // Check if the Enter key is pressed
+      toggleData(); // Trigger the same function as onClick
+    }
+  }}
+>
+  <div className='media-body'>
+    <h4
+      className='m-0 font-sans text-[#333] text-bold text-xl md:text-2xl dark:text-text1 OpeningT'
+    >
+      {Timedata == 0 ? 'Office hours' : 'Bay hours'}
+    </h4>
+  </div>
+
+  <svg
+    className='pr-1'
+    fill='#000000'
+    width='32px'
+    height='32px'
+    viewBox='0 0 32 32'
+    xmlns='http://www.w3.org/2000/svg'
+  >
+    <g id='SVGRepo_bgCarrier' strokeWidth='0'></g>
+    <g
+      id='SVGRepo_tracerCarrier'
+      strokeLinecap='round'
+      strokeLinejoin='round'
+    ></g>
+    <g id='SVGRepo_iconCarrier'>
+      <path d='M16.003 18.626l7.081-7.081L25 13.46l-8.997 8.998-9.003-9 1.917-1.916z'></path>
+    </g>
+  </svg>
+</div>
                   <svg
                     xmlns='http://www.w3.org/2000/svg'
                     viewBox='0 0 512 512'
@@ -171,10 +178,10 @@ export default function Timetable (p) {
         key={index}
         id={index.toString()}
         className={`focus:border-3 focus:border-blue-100 ${
-          index == 0 ? !isOfficeOpen(who) ? 'closed' : 'open':''
+          index == 0 ? !isOfficeOpen(who) ? 'closed' : 'open': ''
         }`}
       >
-        <th>{next7Days[index]}</th>
+        <th className={`${who.extras == next7Days[index] ? 'test': ''}`}>{next7Days[index]}</th>
         <td
           className={`text-right ${
             convertTo12Hour(dayData.start, dayData.end) == 'Closed' &&
@@ -185,7 +192,7 @@ export default function Timetable (p) {
         >
           {dayData.isallday && dayData.start == null 
             ? '24 hours'
-            : dayData.title == 'CLOSED' ? `Closed from ${convertTo12Hour(dayData.start,dayData.end)}` : convertTo12Hour(dayData.start, dayData.end) }
+            :  convertTo12Hour(dayData.start, dayData.end)}
         </td>
       </tr>
     );

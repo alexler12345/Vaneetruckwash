@@ -45,6 +45,10 @@ table.openinghours {
 
 }
 
+.test {
+  background-color: #610f00 !important;
+}
+
 /*light*/
 @media (prefers-color-scheme: light) {
   table.openinghours
