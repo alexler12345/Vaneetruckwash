@@ -26,7 +26,7 @@ export default async function Home () {
   const apiKey = process.env.API_KEY // Use your API key from environment variables
   var o = []
   var k = []
-  if (!apiKey) {
+  if (!apiKey || apiKey == 'null') {
     console.warn('No google API key found using default times')
     o[0] = Defaulttime[0]
     o[1] = Defaulttime[1]
