@@ -184,12 +184,7 @@ console.log('timetable 117')
       > {console.log('184')}
         <th className={`${who.extras == next7Days[index] ? 'test': ''}`}></th>
         <td
-          className={`text-right ${
-            convertTo12Hour(dayData.start, dayData.end) == 'Closed' &&
-            dayData.isallday == false
-              ? 'offDays'
-              : console.log('190 timeTable')
-          }`}
+          
         > 
           {dayData.isallday && dayData.start == null 
             ? '24 hours'
