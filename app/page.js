@@ -44,7 +44,7 @@ export default async function Home () {
         if (response.ok) {
           const data = await response.json()
           if (data.items) {
-            console.log(data)
+            
           o.push(FormCal(data))
           k.push(data)
           
