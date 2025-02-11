@@ -3,6 +3,12 @@
 # Define the file name
 FILE=".env.local"
 
+# Check if the file already exists
+if [ -f "$FILE" ]; then
+  echo "$FILE already exists. Exiting."
+  exit 0
+fi
+
 # Prompt the user for the API key
 read -p "Enter your API key: " API_KEY
 
