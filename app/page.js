@@ -43,7 +43,7 @@ export default async function Home () {
         const response = await fetch(url, { next: { revalidate: 5 } })
         if (response.ok) {
           const data = await response.json()
-          if (data) {
+          if (data.items) {
             
           o.push(FormCal(data))
           k.push(data)
