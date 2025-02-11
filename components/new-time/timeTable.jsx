@@ -179,7 +179,7 @@ console.log('timetable 117')
         key={index}
         id={index.toString()}
         className={`focus:border-3 focus:border-blue-100 ${
-          index == 0 ? !isOfficeOpen(who) ? 'closed' : 'open': ''
+          index == 0 ? !isOfficeOpen(who) ? 'closed' : 'open': console.log('182')
         }`}
       >
         <th className={`${who.extras == next7Days[index] ? 'test': ''}`}>{next7Days[index]}</th>
