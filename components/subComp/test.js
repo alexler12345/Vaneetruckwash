@@ -36,7 +36,7 @@ export function FormCal (uncloned) {
   }
 
   
-  
+  console.log('hi')
   
 
 const temp = raw
