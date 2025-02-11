@@ -39,7 +39,7 @@ export function FormCal (uncloned) {
   console.log('hi')
   
 
-const temp = raw
+const temp = raw[0]
 
 
 //for loop that goes through every item on list
