@@ -7,7 +7,7 @@ export function FormCal (uncloned) {
       return !element.summary.toUpperCase().includes('CLOSED') 
     })
   } catch (error) {
-    console.warn(error,'raw')
+    console.error(error,'raw')
   }
    
 
