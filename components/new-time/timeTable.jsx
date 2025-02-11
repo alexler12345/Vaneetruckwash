@@ -175,14 +175,14 @@ console.log('timetable 117')
     return (
       <tr
         tabIndex={0}
-        title={Timedata == 1 ? 'Bay hours' : console.log('178')}
+        title={Timedata == 1 ? 'Bay hours' : 'Office hours'}
         key={index}
         id={index.toString()}
         className={`focus:border-3 focus:border-blue-100 ${
-          index == 0 ? !isOfficeOpen(who) ? 'closed' : 'open': ''
+          index == 0 ? !isOfficeOpen(who) ? 'closed' : 'open': console.log('182')
         }`}
-      >
-        <th className={`${who.extras == next7Days[index] ? 'test': ''}`}>{next7Days[index]}</th>
+      > {console.log('184')}
+        <th className={`${who.extras == next7Days[index] ? 'test': ''}`}></th>
         <td
           className={`text-right ${
             convertTo12Hour(dayData.start, dayData.end) == 'Closed' &&
@@ -190,7 +190,7 @@ console.log('timetable 117')
               ? 'offDays'
               : console.log('190 timeTable')
           }`}
-        >
+        > 
           {dayData.isallday && dayData.start == null 
             ? '24 hours'
             :  convertTo12Hour(dayData.start, dayData.end)}
