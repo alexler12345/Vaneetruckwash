@@ -26,10 +26,12 @@ function convertTo12Hour(start,end) {
 
 function Title(raw) {
  
-
+if (raw.length > 1 ) {
 var filtered = raw[1].items.filter(element => {
  return element.summary.toUpperCase().includes('CLOSED')
 });
+}
+
 
 const filter = filtered.length >0 ?filtered[0]:'rubber'
 
