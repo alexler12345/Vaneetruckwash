@@ -79,7 +79,7 @@ officeHours.extras = numtoDay[new Date(notraw[0].start.dateTime).getDay()]
       officeHours[o].start = start //assign formated time to object for start and end
       officeHours[o].end = end
       
-      
+      console.log('82 test')
       }
   
   }//end of for loop
