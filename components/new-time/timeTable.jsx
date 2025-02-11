@@ -7,72 +7,10 @@ import { useState } from 'react'
 
 // Function to check if the office is open
 
-export const formatter = new Intl.DateTimeFormat('en-US', {
-  timeZone: 'America/Denver',
-  weekday: 'long'
-})
 
 
-function convertTo12Hour(start,end) {
-  
-  
-  if (!start && !end) {
-    return 'Closed'
-  } else { 
-   
-  const [hours1, minutes1, seconds1] = start.split(':').map(Number);
-  const [hours2, minutes2, seconds2] = end.split(':').map(Number);
+
  
-  
-  const period1 = hours1 >= 12 ? 'PM' : 'AM';
-  const period2 = hours2 >= 12 ? 'PM' : 'AM';
-  const hours122 = hours2 % 12 || 12;
-  const hours121 = hours1 % 12 || 12; // Convert "0" to "12" for midnight
-  let timeOne = `${hours121} ${period1}`
-  let timeTwo = `${hours122} ${period2}`;
-  
-    return `${timeOne}-${timeTwo}`
-  
-}
-
-}
-
-
-
-
-
-function isOfficeOpen (who) {
-
-
-  var isOpen = null
- 
-  
-  
-  
-  var dayHours = who[formatter.format(new Date())]
-
- if (dayHours.isallday) {
-  return isOpen = true
- }
-
-  const serverTime = new Intl.DateTimeFormat('en-US', {
-    timeZone: 'America/Denver',
-    hour: '2-digit',
-    minute: '2-digit',
-    second: '2-digit',
-    hour12: false
-  }).format(new Date())
-  
- 
-
-  if (serverTime >= dayHours.start && serverTime <= dayHours.end) {
-    isOpen = true //open
-  }
-  if (serverTime < dayHours.start || serverTime > dayHours.end) {
-    isOpen = false 
-  }
-  return isOpen
-}
 
 
 
@@ -80,55 +18,25 @@ export default function Timetable (p) {
   
 
  
- //0 = office hours 1 = bay hours
-  const [Timedata, setTimedata] = useState(0)
 
- 
   
-  var who = p[Timedata]
+ 
  
 
-
-  console.log(
-    'it looks like your looking at the  source code lucky for you all of it is on https://github.com/alexler12345/Vaneetruckwash.git'
-  )
 
     
 
   
-  const today = new Date() // Current date
-  const next7Days = []
-
-  // Loop to get the current day and the next 6 days
-  for (let i = 0; i < 7; i++) {
-    const nextDay = new Date(today) // Clone the current date
-    nextDay.setDate(today.getDate() + i) // Increment the date
-    next7Days.push(formatter.format(nextDay)) // Format and add to the array
-    
-  }
-
-  const toggleData = () => {
-    setTimeout(3000)
-    setTimedata((prevIndex) => (prevIndex === 1 ? 0 : 1))
-  }
+ 
 
   
-  const clockIconSize = 47
 
   return (
     <>
    
    <div className='flex justify-between items-center m-2.5 lg:mb-4 pb-2.5 lg:pb-4 border-b border-b-highlight card-header'>
-   <div
-  tabIndex={0} // Make the div focusable
-  className='flex border-2 focus:border-5 shadow-sm focus:border-blue-100 rounded-md transition-all hover:-translate-y-0.5 active:translate-y-0.5 duration-300 select-none ease-in-out'
-  onClick={toggleData} // Handle click
-  onKeyDown={(e) => {
-    if (e.key === 'Enter') { // Check if the Enter key is pressed
-      toggleData(); // Trigger the same function as onClick
-    }
-  }}
->
+   <div>
+ 
   <div className='media-body'>
     <h4
       className='m-0 font-sans text-[#333] text-bold text-xl md:text-2xl dark:text-text1 OpeningT'
@@ -168,37 +76,7 @@ export default function Timetable (p) {
                 </div>
   
    <table className="openinghours">
-      <tbody>
-      {[...Array(7)].map((_, index) => {
-    const dayData = who[next7Days[index]] || {}; // Use default empty object
-    return (
-      <tr
-        tabIndex={0}
-        title={Timedata == 1 ? 'Bay hours' : 'Office hours'}
-        key={index}
-        id={index.toString()}
-        className={`focus:border-3 focus:border-blue-100 ${
-          index == 0 ? !isOfficeOpen(who) ? 'closed' : 'open': ''
-        }`}
-      >
-        <th className={`${who.extras == next7Days[index] ? 'test': ''}`}>{next7Days[index]}</th>
-        <td
-          className={`text-right ${
-            convertTo12Hour(dayData.start, dayData.end) == 'Closed' &&
-            dayData.isallday == false
-              ? 'offDays'
-              : ''
-          }`}
-        >
-          {dayData.isallday && dayData.start == null 
-            ? '24 hours'
-            :  convertTo12Hour(dayData.start, dayData.end)}
-        </td>
-      </tr>
-    );
-})}
-
-      </tbody>
+      
     </table>
     </>
   )

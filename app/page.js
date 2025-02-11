@@ -12,64 +12,14 @@ export const metadata = {
 }
 
 export default async function Home () {
-  const event = new Date()
-  event.setUTCHours(23, 59, 59, 59)
-  event.getDate(event.setDate(event.getDate() + 6))
-  const events = new Date()
-  events.setUTCHours(0, 0, 0, 0)
-  const calendarId = [
-    'a16c4aac33575e5eddfc40fac317fc414d26f123a733f3651cacbe268e85f3a4@group.calendar.google.com',
-    'e6e9e8c902d57bb7f9d63b62c5831292c8246381ed1c6931e063168ba924bc24@group.calendar.google.com'
-    
-  ] // Replace with your calendar ID
-  const baseUrl = 'https://www.googleapis.com/calendar/v3/calendars'
-  const apiKey = process.env.API_KEY // Use your API key from environment variables
-  var o = []
-  var k = []
-  if (!apiKey || apiKey == 'null') {
-    console.warn('No google API key found using default times')
-    o[0] = Defaulttime[0]
-    o[1] = Defaulttime[1]
-  } else {
-    // for loop that gets 
-    for (let i = 0; i < 2; i++) {
-      const url = `${baseUrl}/${encodeURIComponent(
-        calendarId[i]
-      )}/events?key=${apiKey}&orderBy=startTime&singleEvents=true&timeMin=${events.toISOString()}&timeMax=${event.toISOString()}`
-//86400
+ 
+  
 
-
-      try {
-        const response = await fetch(url, { next: { revalidate: 5 } })
-        if (response.ok) {
-          const data = await response.json()
-          if (data) {
-            
-          o.push(FormCal(data))
-          k.push(data)
-          
-           
-          } else {
-            console.warn('Response is ok, API key is found, response has no events will use default times')
-            o[i] = Defaulttime[i]
-          }
-        } else {
-          console.warn(
-            'Promise resolved but HTTP status failed \n Using default times'
-          )
-          o[i] = Defaulttime[i]
-        }
-      } catch (error) {
-        console.warn(error)
-        o[i] = Defaulttime[i]
-      }
-    }
-  }
 
  
   return (
     <>
-      <Title {...k} />
+      <Title/>
 
       <div className='grid gap-5 grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:flex lg:justify-around lg:border-b lg:border-gray-200'>
         <div className='flex flex-col w-full lg:w-[41%]'>
@@ -85,7 +35,7 @@ export default async function Home () {
           </div>
         </div>
         <div className='flex flex-col w-full lg:w-[50%]'>
-          <NewTime {...o}/>
+          <NewTime/>
         </div>
       </div>
 
