@@ -7,9 +7,7 @@ export function FormCal (uncloned) {
       return !element.summary.toUpperCase().includes('CLOSED') 
     })
 
-    const notraw = t.items.filter((element) => {
-      return element.summary.toUpperCase().includes('CLOSED')
-    })
+   
 
 
 
@@ -40,9 +38,7 @@ export function FormCal (uncloned) {
   
 
 const temp = raw
-if (notraw && notraw.length >= 1) {
-officeHours.extras = numtoDay[new Date(notraw[0].start.dateTime).getDay()]
-}
+
 
 //for loop that goes through every item on list
   for (var i = 0; i < temp.length; i++) {
