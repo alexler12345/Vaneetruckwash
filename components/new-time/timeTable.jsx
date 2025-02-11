@@ -187,7 +187,7 @@ console.log('timetable 117')
             convertTo12Hour(dayData.start, dayData.end) == 'Closed' &&
             dayData.isallday == false
               ? 'offDays'
-              : ''
+              : console.log('190 timeTable')
           }`}
         >
           {dayData.isallday && dayData.start == null 
