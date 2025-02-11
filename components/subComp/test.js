@@ -38,7 +38,7 @@ const temp = raw.items
 
 
 //for loop that goes through every item on list
-  for (var i = 0; i < temp.length; i++) {
+  for (var i = 0; i <= temp.length; i++) {
     
     
 //if true then that day is all day
