@@ -3,7 +3,7 @@ export function FormCal (uncloned) {
   
     var t = structuredClone(uncloned)
     try {
-    const raw = t.items.filter((element) => {
+    var raw = t.items.filter((element) => {
       return !element.summary.toUpperCase().includes('CLOSED') 
     })
   } catch {
