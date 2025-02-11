@@ -170,6 +170,7 @@ console.log('timetable 117')
    <table className="openinghours">
       <tbody>
       {[...Array(7)].map((_, index) => {
+        console.log('173')
     const dayData = who[next7Days[index]] || {}; // Use default empty object
     return (
       <tr
