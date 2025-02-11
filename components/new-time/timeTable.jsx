@@ -40,7 +40,7 @@ export default function Timetable () {
     <h4
       className='m-0 font-sans text-[#333] text-bold text-xl md:text-2xl dark:text-text1 OpeningT'
     >
-      {Timedata == 0 ? 'Office hours' : 'Bay hours'}
+     time
     </h4>
   </div>
 

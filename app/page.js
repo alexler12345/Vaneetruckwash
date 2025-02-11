@@ -9,7 +9,7 @@ export const metadata = {
     'Locally owned and operated forever washing trucks, trailers and RVs'
 }
 
-export default async function Home () {
+export default function Home () {
  
   
 
