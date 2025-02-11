@@ -6,8 +6,8 @@ export function FormCal (uncloned) {
     var raw = t.items.filter((element) => {
       return !element.summary.toUpperCase().includes('CLOSED') 
     })
-  } catch {
-    throw new Error
+  } catch (error) {
+    console.warn(error)
   }
    
 
