@@ -189,6 +189,7 @@ console.log('timetable 117')
           {dayData.isallday && dayData.start == null 
             ? '24 hours'
             :  convertTo12Hour(dayData.start, dayData.end)}
+            {console.log('192')}
         </td>
       </tr>
     );
