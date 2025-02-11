@@ -33,7 +33,7 @@ var filtered = raw[1].items.filter(element => {
 }
 
 
-const filter = filtered.length >0 ?filtered[0]:'rubber'
+const filter = filtered && filtered.length >0 ?filtered[0]:'rubber'
 
 
   

@@ -32,7 +32,7 @@ export default async function Home () {
     o[1] = Defaulttime[1]
   } else {
     // for loop that gets 
-    for (let i = 0; i < 1; i++) {
+    for (let i = 0; i < calendarId.length; i++) {
       const url = `${baseUrl}/${encodeURIComponent(
         calendarId[i]
       )}/events?key=${apiKey}&orderBy=startTime&singleEvents=true&timeMin=${events.toISOString()}&timeMax=${event.toISOString()}`

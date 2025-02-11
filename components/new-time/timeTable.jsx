@@ -170,7 +170,6 @@ console.log('timetable 117')
    <table className="openinghours">
       <tbody>
       {[...Array(7)].map((_, index) => {
-        console.log('173')
     const dayData = who[next7Days[index]] || {}; // Use default empty object
     return (
       <tr
@@ -179,18 +178,18 @@ console.log('timetable 117')
         key={index}
         id={index.toString()}
         className={`focus:border-3 focus:border-blue-100 ${
-          index == 0 ? !isOfficeOpen(who) ? 'closed' : 'open': console.log('182')
+          index == 0 ? !isOfficeOpen(who) ? 'closed' : 'open': ''
         }`}
-      > {console.log('184')}
-        <th className={`${who.extras == next7Days[index] ? 'test': ''}`}></th>
+      >
+        <th className={`${who.extras == next7Days[index] ? 'test': ''}`}>{next7Days[index]}</th>
         <td
           className={`text-right ${
             convertTo12Hour(dayData.start, dayData.end) == 'Closed' &&
             dayData.isallday == false
               ? 'offDays'
-              : console.log('190 timeTable')
+              : ''
           }`}
-        > 
+        >
           {dayData.isallday && dayData.start == null 
             ? '24 hours'
             :  convertTo12Hour(dayData.start, dayData.end)}
