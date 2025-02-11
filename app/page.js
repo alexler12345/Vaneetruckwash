@@ -2,8 +2,6 @@ import Footer from '@/components/footer'
 import Title from '@/components/title'
 import NewContact from '@/components/new-contact'
 import NewTime from '@/components/new-time/time'
-import { Defaulttime } from '@/components/subComp/calandertimes'
-import { FormCal } from '@/components/subComp/test'
 
 export const metadata = {
   title: 'Vanee Truck Wash',
