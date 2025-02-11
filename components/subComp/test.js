@@ -7,6 +7,8 @@ export function FormCal (uncloned) {
       return !element.summary.toUpperCase().includes('CLOSED') 
     })
 
+    console.log(raw)
+
    
 
 
