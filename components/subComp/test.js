@@ -43,7 +43,7 @@ const temp = raw.items
     
 //if true then that day is all day
     if (!temp[i].start.dateTime) {
-      
+      console.log(new Date().getDay())
       var k = numtoDay[new Date(temp[i].start.date).getDay() +1]
       console.log(k)
       officeHours[k].isallday = true
