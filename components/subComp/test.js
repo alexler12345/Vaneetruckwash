@@ -31,7 +31,7 @@ export function FormCal (uncloned) {
   }
 
   
-  console.log('hi')
+
   
 
 const temp = raw.items
@@ -74,7 +74,7 @@ const temp = raw.items
       officeHours[o].start = start //assign formated time to object for start and end
       officeHours[o].end = end
       
-      console.log('82 test')
+     
       }
   
   }//end of for loop

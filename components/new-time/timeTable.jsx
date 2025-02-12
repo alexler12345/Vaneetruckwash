@@ -114,7 +114,7 @@ export default function Timetable (p) {
 
   
   const clockIconSize = 47
-console.log('timetable 117')
+
   return (
     <>
    
