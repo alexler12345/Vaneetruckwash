@@ -6,6 +6,23 @@ if you want to help out please email me at Alex.holley761@gmail.com
 
 ## In home directory:
 
+### Quick start:
+```
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+nvm install 22
+git clone https://github.com/alexler12345/Vaneetruckwash.git
+cd Vaneetruckwash
+npm install
+npm run build
+npm start
+```
+this will start on localhost:3000
+
+## Full guide
+
 MUST INSTALL NODE.JS 
 as this is a nextjs build nodejs is needed to do that go to https://nodejs.org/en/download 
 
