@@ -8,16 +8,20 @@ if you want to help out please email me at Alex.holley761@gmail.com
 
 ### Quick start:
 ```
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-nvm install 22
-git clone https://github.com/alexler12345/Vaneetruckwash.git
-cd Vaneetruckwash
+sudo apt update
+sudo apt install nodejs npm git apache2
+sudo mkdir -p /var/www/vaneetruckwash
+sudo chown -R $USER:$USER /var/www/vaneetruckwash
+git clone https://github.com/alexler12345/Vaneetruckwash.git /var/www/vaneetruckwash
+cd /var/www/vaneetruckwash
+sudo dpkg-reconfigure tzdata
+```
+got to 'Amarica' then 'Edmonton'
+then
+``
 npm install
 npm run build
-npm start
+``
 ```
 this will start on localhost:3000
 
