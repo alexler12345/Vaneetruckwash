@@ -21,13 +21,16 @@ export default async function Home () {
     'a16c4aac33575e5eddfc40fac317fc414d26f123a733f3651cacbe268e85f3a4@group.calendar.google.com',
     'e6e9e8c902d57bb7f9d63b62c5831292c8246381ed1c6931e063168ba924bc24@group.calendar.google.com'
     
-  ] // Replace with your calendar ID
+  ] //array length must be 2
+ if (calendarId.length !== 2) {
+  console.error('calendarId array is not 2.\n Please add 2 google calendar ids')
+ }
   const baseUrl = 'https://www.googleapis.com/calendar/v3/calendars'
   const apiKey = process.env.API_KEY // Use your API key from environment variables
   var o = []
-  var k = []
+  
   if (!apiKey) {
-    console.warn('No google API key found using default times')
+    console.error('No google API key found using default times')
     o[0] = Defaulttime[0]
     o[1] = Defaulttime[1]
   } else {
@@ -40,31 +43,31 @@ export default async function Home () {
 
 
       try {
-        const response = await fetch(url, { next: { revalidate: 5 } })
+        const response = await fetch(url, { next: { revalidate: 3600 } })
         if (response.ok) {
           const data = await response.json()
           if (data.items) {
             
           o.push(FormCal(data))
-          k.push(data)
+         
           
            
           } else {
             console.warn('Response is ok, API key is found, response has no events will use default times')
             o[i] = Defaulttime[i]
-            k[i] = Defaulttime[i]
+           
           }
         } else {
           console.warn(
             'Promise resolved but HTTP status failed \n Using default times'
           )
           o[i] = Defaulttime[i]
-          k[i] = Defaulttime[i]
+         
         }
       } catch (error) {
         console.warn(error)
         o[i] = Defaulttime[i]
-        k[i] = Defaulttime[i]
+        
       }
     }
   }
@@ -72,7 +75,7 @@ export default async function Home () {
  
   return (
     <>
-      <Title {...k} />
+      <Title {...o} />
 
       <div className='grid gap-5 grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:flex lg:justify-around lg:border-b lg:border-gray-200'>
         <div className='flex flex-col w-full lg:w-[41%]'>
